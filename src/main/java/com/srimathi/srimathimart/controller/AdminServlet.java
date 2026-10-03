@@ -69,6 +69,16 @@ public class AdminServlet extends BaseServlet {
                     connection,
                     "SELECT COUNT(*) FROM orders"
             );
+            java.math.BigDecimal revenue;
+
+try (PreparedStatement statement = connection.prepareStatement(
+        "SELECT COALESCE(SUM(total_amount), 0) FROM orders");
+     ResultSet rs = statement.executeQuery()) {
+
+    revenue = rs.next()
+            ? rs.getBigDecimal(1)
+            : java.math.BigDecimal.ZERO;
+}
 
             Json json = new Json()
                     .beginObject()
@@ -77,6 +87,7 @@ public class AdminServlet extends BaseServlet {
                     .put("sellers", sellers)
                     .put("products", products)
                     .put("orders", orders)
+                    .put("revenue", revenue)
                     .endObject();
 
             HttpUtil.writeJson(

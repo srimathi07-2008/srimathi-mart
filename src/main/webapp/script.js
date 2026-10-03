@@ -1108,6 +1108,9 @@ async function loadAdminDashboard() {
             cards[2].textContent = data.products;
             cards[3].textContent = data.orders;
         }
+        if (cards.length >= 5) {
+    cards[4].textContent = "&#8377;" + Number(data.revenue || 0).toFixed(2);
+}
 
     } catch (error) {
         console.error("Admin dashboard error:", error);
