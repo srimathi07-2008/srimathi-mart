@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Buyer Login | Srimathi Mart</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <section class="login-card">
+
+            <a href="index.html" class="back-link">
+                ← Back to role selection
+            </a>
+
+            <div class="login-logo">
+                <span class="logo-icon">S</span>
+                <span>Srimathi Mart</span>
+            </div>
+
+            <p class="login-label">BUYER ACCOUNT</p>
+
+            <h1>Welcome back!</h1>
+
+            <p class="login-description">
+                Sign in to continue exploring products and offers.
+            </p>
+
+
+            <form id="buyerLoginForm">
+
+                <label for="email">Email or phone number</label>
+
+                <input
+                    type="text"
+                    id="email"
+                    placeholder="Enter your email or phone"
+                >
+
+
+                <label for="password">Password</label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                    >
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        class="show-password"
+                    >
+                        Show
+                    </button>
+
+                </div>
+
+
+                <div class="login-options">
+
+                    <label class="remember">
+                        <input type="checkbox" id="remember">
+                        Remember me
+                    </label>
+
+                    <a href="#" onclick="forgotPassword(event)">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <button type="submit" class="login-button">
+                    Login to Srimathi Mart
+                </button>
+
+            </form>
+
+
+            <div class="divider">
+                <span>or continue with</span>
+            </div>
+
+
+            <div class="social-buttons">
+
+                <button type="button" onclick="demoSocialLogin('Google')">
+                    <span>G</span>
+                    Google
+                </button>
+
+                <button type="button" onclick="demoSocialLogin('Apple')">
+                    <span>●</span>
+                    Apple
+                </button>
+
+            </div>
+
+
+            <p class="signup-text">
+                New to Srimathi Mart?
+                <a href="#" onclick="signupDemo(event)">Create an account</a>
+            </p>
+
+            <p class="demo-note">
+                Signing in is handled by the Srimathi Mart server.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ADDED by the Java conversion: api.js holds every call to the
+         servlets and must load before script.js, which uses it. -->
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

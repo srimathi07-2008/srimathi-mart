@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Srimathi Mart | Checkout</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="shop-navbar">
+
+        <div class="shop-logo">
+            <span>S</span>
+            <strong>Srimathi Mart</strong>
+        </div>
+
+        <nav class="desktop-nav">
+            <a href="home.html">Home</a>
+            <a href="home.html#categories">Categories</a>
+            <a href="home.html#collections">Products</a>
+            <a href="home.html#offers">Offers</a>
+        </nav>
+
+    </header>
+
+
+    <main class="cart-page">
+
+        <div class="cart-heading">
+
+            <p>CHECKOUT</p>
+
+            <h1>Complete Your Order</h1>
+
+            <span>
+                Enter your delivery details and review your order.
+            </span>
+
+        </div>
+
+
+        <section class="cart-layout">
+
+
+            <!-- =========================
+                 DELIVERY + PAYMENT
+            ========================== -->
+
+            <div class="cart-items">
+
+
+                <!-- DELIVERY DETAILS -->
+
+                <div class="simple-section">
+
+                    <p>DELIVERY ADDRESS</p>
+
+                    <h2>Where should we deliver?</h2>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Full Name"
+                        pattern="[A-Za-z]+"
+                        title="Please enter letters only">
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="Phone Number"
+                        maxlength="10"
+                        pattern="[0-9]{10}"
+                        inputmode="numeric"
+                        required>
+
+                    <textarea
+                        id="customerAddress"
+                        placeholder="Full Address"></textarea>
+
+                    <input
+                        type="text"
+                        id="customerCity"
+                        placeholder="City"
+                        pattern="[A-Za-z]+"
+                        tittle="Please enter letters only"
+                        required>
+
+                    <input
+                        type="text"
+                        id="customerPincode"
+                        placeholder="Pincode"
+                        maxlength="6"
+                        pattern="[0-9]{6}"
+                        inputmode="numeric"
+                        required>
+
+                </div>
+
+
+                <!-- PAYMENT METHOD -->
+
+                <div class="simple-section">
+
+                    <p>PAYMENT METHOD</p>
+
+                    <h2>Choose how you want to pay</h2>
+
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="COD"
+                            checked
+                            onchange="showPaymentDetails('COD')">
+
+                        Cash on Delivery
+                    </label>
+
+                    <br><br>
+
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="UPI"
+                            onchange="showPaymentDetails('UPI')">
+
+                        UPI
+                    </label>
+
+                    <br><br>
+
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="CARD"
+                            onchange="showPaymentDetails('CARD')">
+
+                        Credit / Debit Card
+                    </label>
+
+
+                    <!-- PAYMENT DETAILS APPEAR HERE -->
+
+                    <div
+                        id="paymentDetails"
+                        style="margin-top:20px;">
+                    </div>
+                </div>
+            </div>
+            <!-- =========================
+                 ORDER SUMMARY
+            ========================== -->
+
+            <aside class="cart-summary">
+
+                <p>ORDER SUMMARY</p>
+
+                <h2>Your Order</h2>
+
+
+                <div class="summary-row">
+
+                    <span>Items</span>
+
+                    <strong id="checkoutItems">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>Subtotal</span>
+
+                    <strong id="checkoutSubtotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>Delivery</span>
+
+                    <strong>
+                        FREE
+                    </strong>
+
+                </div>
+
+
+                <hr>
+
+
+                <div class="summary-total">
+
+                    <span>Total</span>
+
+                    <strong id="checkoutTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="checkout-button"
+                    onclick="placeOrder()">
+
+                    Place Order →
+
+                </button>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="shop-footer">
+
+        <h3>
+            Srimathi Mart
+        </h3>
+
+        <p>
+            Your home essentials marketplace.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         PAYMENT JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function showPaymentDetails(method) {
+
+            const box =
+                document.getElementById("paymentDetails");
+
+
+            if (method === "COD") {
+
+                box.innerHTML = `
+                    <p>
+                        💵 Cash on Delivery selected
+                    </p>
+                `;
+
+            }
+
+
+            else if (method === "UPI") {
+
+                box.innerHTML = `
+
+                    <input
+                        type="text"
+                        id="upiId"
+                        placeholder="Enter UPI ID">
+
+                `;
+
+            }
+
+
+            else if (method === "CARD") {
+
+                box.innerHTML = `
+
+                    <input
+                        type="text"
+                        id="cardNumber"
+                        placeholder="Card Number"
+                        maxlength="16">
+
+                    <br><br>
+
+                    <input
+                        type="text"
+                        id="cardHolder"
+                        placeholder="Card Holder Name">
+
+                    <br><br>
+
+                    <input
+                        type="text"
+                        id="cardExpiry"
+                        placeholder="MM/YY"
+                        maxlength="5">
+
+                    <br><br>
+
+                    <input
+                        type="password"
+                        id="cardCvv"
+                        placeholder="CVV"
+                        maxlength="3">
+
+                `;
+
+            }
+
+        }
+
+
+        // Show COD details when page opens
+
+        window.addEventListener("DOMContentLoaded", function () {
+
+            showPaymentDetails("COD");
+
+        });
+
+    </script>
+
+
+    <!-- BACKEND JAVASCRIPT -->
+
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+<script>
+function showPaymentDetails(method) {
+
+    const box = document.getElementById("paymentDetails");
+
+    if (method === "COD") {
+        box.innerHTML = "";
+    }
+
+    else if (method === "UPI") {
+        box.innerHTML = `
+            <div style="text-align:center;">
+                <h3>Scan & Pay</h3>
+                <img src="images/payment-qr.png"
+                     alt="UPI QR Code"
+                     style="width:200px;height:200px;">
+                <p>Scan this QR code to pay</p>
+                <button
+    type="button"
+    class="shop-now-button"
+    onclick="demoPaymentSuccess()">
+    Payment Successful
+</button>
+                <input type="text"
+                       placeholder="Enter UPI ID">
+            </div>
+        `;
+    }
+
+    else if (method === "CARD") {
+        box.innerHTML = `
+            <input type="text" placeholder="Card Number">
+            <br><br>
+            <input type="text" placeholder="Card Holder Name">
+            <br><br>
+            <input type="text" placeholder="Expiry Date">
+            <br><br>
+            <input type="password" placeholder="CVV">
+        `;
+    }
+}
+</script>
+<script>
+function demoPaymentSuccess() {
+    alert("Demo Payment Successful! ✅");
+}
+</script>
+</body>
+
+</html>

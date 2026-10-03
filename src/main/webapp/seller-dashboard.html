@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Seller Dashboard | Srimathi Mart</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==========================
+         SELLER NAVBAR
+    =========================== -->
+
+    <header class="seller-navbar">
+
+        <div class="seller-dashboard-brand">
+
+            <div class="seller-dashboard-logo">
+                S
+            </div>
+
+            <div>
+                <strong>Srimathi Mart</strong>
+                <span>Seller Centre</span>
+            </div>
+
+        </div>
+
+
+        <div class="seller-user">
+
+            <div class="seller-avatar">
+                S
+            </div>
+
+            <div>
+                <strong>Seller</strong>
+                <span>Store Manager</span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================
+         DASHBOARD LAYOUT
+    =========================== -->
+
+    <div class="seller-dashboard-layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="seller-sidebar">
+
+            <p class="sidebar-title">
+                SELLER MENU
+            </p>
+
+            <a href="#" class="seller-menu active">
+                📊 Dashboard
+            </a>
+
+            <a href="#products" class="seller-menu">
+                📦 Products
+            </a>
+
+            <a href="#orders" class="seller-menu">
+                🛍️ Orders
+            </a>
+
+            <a href="#sales" class="seller-menu">
+                📈 Sales
+            </a>
+
+            <a href="#profile" class="seller-menu">
+                👤 My Profile
+            </a>
+
+            <a href="index.html" class="seller-menu logout" onclick="smLogout(event)">
+                ↩ Logout
+            </a>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="seller-dashboard-main">
+
+
+            <!-- PAGE HEADING -->
+
+            <div class="seller-page-heading">
+
+                <div>
+
+                    <p>SELLER OVERVIEW</p>
+
+                    <h1>
+                        Good day, Seller 👋
+                    </h1>
+
+                    <span>
+                        Here's what's happening
+                        with your store today.
+                    </span>
+
+                </div>
+
+                <button class="seller-add-button"
+                onclick="goToPage('seller.html')">
+                    + Add Product
+                </button>
+
+            </div>
+
+
+
+            <!-- ==========================
+                 STATISTICS
+            =========================== -->
+
+            <section class="seller-stat-grid">
+
+                <div class="seller-stat-card">
+
+                    <span>PRODUCTS</span>
+
+                    <strong id="statProducts">48</strong>
+
+                    <p>
+                        ↑ 8 this month
+                    </p>
+
+                </div>
+
+
+                <div class="seller-stat-card">
+
+                    <span>ORDERS</span>
+
+                    <strong>126</strong>
+
+                    <p>
+                        ↑ 12% this month
+                    </p>
+
+                </div>
+
+
+                <div class="seller-stat-card">
+
+                    <span>SALES</span>
+
+                    <strong id="statStockValue">₹84,560</strong>
+
+                    <p>
+                        ↑ 18% this month
+                    </p>
+
+                </div>
+
+
+                <div class="seller-stat-card">
+
+                    <span>REVENUE</span>
+
+                    <strong>₹72,410</strong>
+
+                    <p>
+                        ↑ 15% this month
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==========================
+                 PRODUCTS
+            =========================== -->
+
+            <section
+                class="seller-content-card"
+                id="products">
+
+                <div class="seller-section-title">
+
+                    <div>
+
+                        <p>INVENTORY</p>
+
+                        <h2>
+                            Your products
+                        </h2>
+
+                    </div>
+
+                    <button>
+                        View all
+                    </button>
+
+                </div>
+
+
+                <div class="seller-product-table" id="sellerProductTable">
+
+                    <div class="seller-table-row seller-table-head">
+
+                        <span>Product</span>
+                        <span>Category</span>
+                        <span>Price</span>
+                        <span>Stock</span>
+                        <span>Status</span>
+
+                    </div>
+
+
+                    <div class="seller-table-row">
+
+                        <span>
+                            Wireless Headphones
+                        </span>
+
+                        <span>
+                            Electronics
+                        </span>
+
+                        <span>
+                            ₹1,499
+                        </span>
+
+                        <span>
+                            24
+                        </span>
+
+                        <span class="stock-good">
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <div class="seller-table-row">
+
+                        <span>
+                            Classic Handbag
+                        </span>
+
+                        <span>
+                            Accessories
+                        </span>
+
+                        <span>
+                            ₹1,249
+                        </span>
+
+                        <span>
+                            8
+                        </span>
+
+                        <span class="stock-low">
+                            Low stock
+                        </span>
+
+                    </div>
+
+
+                    <div class="seller-table-row">
+
+                        <span>
+                            Everyday Sneakers
+                        </span>
+
+                        <span>
+                            Fashion
+                        </span>
+
+                        <span>
+                            ₹1,899
+                        </span>
+
+                        <span>
+                            32
+                        </span>
+
+                        <span class="stock-good">
+                            Active
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==========================
+                 ORDERS
+            =========================== -->
+
+            <section
+                class="seller-content-card"
+                id="orders">
+
+                <div class="seller-section-title">
+
+                    <div>
+
+                        <p>RECENT ACTIVITY</p>
+
+                        <h2>
+                            Recent orders
+                        </h2>
+
+                    </div>
+
+                    <button>
+                        View all
+                    </button>
+
+                </div>
+
+
+                <div class="order-list">
+
+                    <div class="order-item">
+
+                        <div>
+                            <strong>#SM1024</strong>
+
+                            <span>
+                                Wireless Headphones
+                            </span>
+                        </div>
+
+                        <strong>
+                            ₹1,499
+                        </strong>
+
+                        <span class="order-status">
+                            Processing
+                        </span>
+
+                    </div>
+
+
+                    <div class="order-item">
+
+                        <div>
+                            <strong>#SM1023</strong>
+
+                            <span>
+                                Classic Handbag
+                            </span>
+                        </div>
+
+                        <strong>
+                            ₹1,249
+                        </strong>
+
+                        <span class="order-delivered">
+                            Delivered
+                        </span>
+
+                    </div>
+
+
+                    <div class="order-item">
+
+                        <div>
+                            <strong>#SM1022</strong>
+
+                            <span>
+                                Everyday Sneakers
+                            </span>
+                        </div>
+
+                        <strong>
+                            ₹1,899
+                        </strong>
+
+                        <span class="order-status">
+                            Shipped
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==========================
+                 SALES SUMMARY
+            =========================== -->
+
+            <section
+                class="seller-content-card"
+                id="sales">
+
+                <div class="seller-section-title">
+
+                    <div>
+
+                        <p>PERFORMANCE</p>
+
+                        <h2>
+                            Sales summary
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="sales-summary">
+
+                    <div>
+
+                        <span>
+                            Today's sales
+                        </span>
+
+                        <strong>
+                            ₹8,240
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            This week
+                        </span>
+
+                        <strong>
+                            ₹31,680
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            This month
+                        </span>
+
+                        <strong>
+                            ₹72,410
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==========================
+                 PROFILE
+            =========================== -->
+
+            <section
+                class="seller-content-card"
+                id="profile">
+
+                <div class="seller-section-title">
+
+                    <div>
+
+                        <p>ACCOUNT</p>
+
+                        <h2>
+                            Seller profile
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="seller-profile">
+
+                    <div class="profile-avatar">
+                        S
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Srimathi Store
+                        </h3>
+
+                        <p>
+                            seller@srimathimart.demo
+                        </p>
+
+                    </div>
+
+                    <button>
+                        Edit Profile
+                    </button>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- ADDED by the Java conversion: api.js holds every call to the
+         servlets and must load before script.js, which uses it. -->
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+
+    <!-- ADDED by the Java conversion: fills the existing table and the two
+         real stat cards from the database. The rows it builds use exactly
+         the same .seller-table-row markup and .stock-good / .stock-low
+         classes the static rows used, so style.css is untouched. -->
+    <script>
+    (function () {
+
+        const table = document.getElementById("sellerProductTable");
+
+        if (!table) {
+            return;
+        }
+
+        const headerRow = table.querySelector(".seller-table-head");
+
+        function statusClass(stock) {
+            if (stock <= 0) {
+                return "stock-low";
+            }
+            return stock < 10 ? "stock-low" : "stock-good";
+        }
+
+        function statusLabel(stock) {
+            if (stock <= 0) {
+                return "Out of stock";
+            }
+            return stock < 10 ? "Low stock" : "Active";
+        }
+
+        function render(products) {
+
+            // Drop the placeholder rows but keep the header exactly as it is.
+            table.querySelectorAll(".seller-table-row").forEach(function (row) {
+                if (row !== headerRow) {
+                    row.remove();
+                }
+            });
+
+            if (products.length === 0) {
+
+                const empty = document.createElement("div");
+                empty.className = "seller-table-row";
+                empty.innerHTML =
+                    "<span>No products yet.</span><span></span>" +
+                    "<span></span><span></span><span></span>";
+                table.appendChild(empty);
+
+                return;
+            }
+
+            products.forEach(function (product) {
+
+                const row = document.createElement("div");
+                row.className = "seller-table-row";
+
+                row.innerHTML = `
+
+                        <span>
+                            ${smEscape(product.name)}
+                        </span>
+
+                        <span>
+                            ${smEscape(product.category)}
+                        </span>
+
+                        <span>
+                            ${smFormatPrice(product.price)}
+                        </span>
+
+                        <span>
+                            ${product.stockQuantity}
+                        </span>
+
+                        <span class="${statusClass(product.stockQuantity)}">
+                            ${statusLabel(product.stockQuantity)}
+                        </span>
+                `;
+
+                table.appendChild(row);
+            });
+        }
+
+        function renderStats(products) {
+
+            const count = document.getElementById("statProducts");
+            const value = document.getElementById("statStockValue");
+
+            if (count) {
+                count.textContent = products.length;
+            }
+
+            if (value) {
+                const total = products.reduce(function (sum, product) {
+                    return sum + (Number(product.price) * product.stockQuantity);
+                }, 0);
+
+                value.textContent = smFormatPrice(total);
+            }
+        }
+
+        smGet("/api/seller/products").then(function (data) {
+
+            const products = data.products || [];
+
+            render(products);
+            renderStats(products);
+
+        }).catch(function (error) {
+
+            console.error("Could not load seller products:", error.message);
+
+        });
+
+    })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Srimathi Mart</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==========================
+         ADMIN NAVBAR
+    =========================== -->
+
+    <header class="admin-dashboard-navbar">
+
+        <div class="admin-dashboard-brand">
+
+            <div class="admin-dashboard-logo">
+                S
+            </div>
+
+            <div>
+                <strong>Srimathi Mart</strong>
+                <span>Admin Control Centre</span>
+            </div>
+
+        </div>
+
+
+        <div class="admin-user">
+
+            <div class="admin-avatar">
+                A
+            </div>
+
+            <div>
+                <strong>Administrator</strong>
+                <span>System Manager</span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================
+         DASHBOARD LAYOUT
+    =========================== -->
+
+    <div class="admin-dashboard-layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="admin-sidebar">
+
+            <p class="admin-sidebar-title">
+                CONTROL CENTRE
+            </p>
+
+            <a href="#" class="admin-menu active">
+                📊 Overview
+            </a>
+
+            <a href="#users" class="admin-menu">
+                👥 Users
+            </a>
+
+            <a href="#sellers" class="admin-menu">
+                🏪 Sellers
+            </a>
+
+            <a href="#products" class="admin-menu">
+                📦 Products
+            </a>
+
+            <a href="#orders" class="admin-menu">
+                🛍️ Orders
+            </a>
+
+            <a href="#reports" class="admin-menu">
+                📈 Reports
+            </a>
+
+            <a href="#profile" class="admin-menu">
+                👤 Admin Profile
+            </a>
+
+            <a href="index.html" class="admin-menu admin-logout">
+                ↩ Logout
+            </a>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="admin-dashboard-main">
+
+
+            <!-- PAGE HEADING -->
+
+            <div class="admin-page-heading">
+
+                <div>
+
+                    <p>ADMIN OVERVIEW</p>
+
+                    <h1>
+                        Marketplace control centre
+                    </h1>
+
+                    <span>
+                        Monitor Srimathi Mart and manage
+                        marketplace activity.
+                    </span>
+
+                </div>
+
+                <div class="admin-date">
+                    📅 Demo Dashboard
+                </div>
+
+            </div>
+
+
+
+            <!-- ==========================
+                 STATISTICS
+            =========================== -->
+
+            <section class="admin-stat-grid">
+
+                <div class="admin-stat-card">
+
+                    <span>TOTAL USERS</span>
+
+                    <strong>2,840</strong>
+
+                    <p>
+                        ↑ 124 this month
+                    </p>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span>TOTAL SELLERS</span>
+
+                    <strong>186</strong>
+
+                    <p>
+                        ↑ 14 new sellers
+                    </p>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span>TOTAL PRODUCTS</span>
+
+                    <strong>4,628</strong>
+
+                    <p>
+                        ↑ 238 this month
+                    </p>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span>TOTAL ORDERS</span>
+
+                    <strong>8,942</strong>
+
+                    <p>
+                        ↑ 16% this month
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==========================
+                 REVENUE
+            =========================== -->
+
+            <section class="admin-revenue-card">
+
+                <div>
+
+                    <p>
+                        MARKETPLACE REVENUE
+                    </p>
+
+                    <h2>
+                        ₹12,84,560
+                    </h2>
+
+                    <span>
+                        ↑ 18.4% compared with last month
+                    </span>
+
+                </div>
+
+
+                <div class="revenue-bars">
+
+                    <div style="height: 45%;"></div>
+                    <div style="height: 65%;"></div>
+                    <div style="height: 55%;"></div>
+                    <div style="height: 75%;"></div>
+                    <div style="height: 62%;"></div>
+                    <div style="height: 88%;"></div>
+                    <div style="height: 96%;"></div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==========================
+                 USER MANAGEMENT
+            =========================== -->
+
+            <section
+                class="admin-content-card"
+                id="users">
+
+                <div class="admin-section-title">
+
+                    <div>
+
+                        <p>USER MANAGEMENT</p>
+
+                        <h2>
+                            Recent users
+                        </h2>
+
+                    </div>
+
+                    <button>
+                        View all
+                    </button>
+
+                </div>
+
+
+                <div class="admin-table">
+
+                    <div class="admin-table-row admin-table-head">
+
+                        <span>User</span>
+                        <span>Email</span>
+                        <span>Joined</span>
+                        <span>Status</span>
+
+                    </div>
+
+
+                    <div class="admin-table-row">
+
+                        <span>
+                            Ananya
+                        </span>
+
+                        <span>
+                            ananya@example.com
+                        </span>
+
+                        <span>
+                            28 Aug 2026
+                        </span>
+
+                        <span class="admin-active">
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <div class="admin-table-row">
+
+                        <span>
+                            Priya
+                        </span>
+
+                        <span>
+                            priya@example.com
+                        </span>
+
+                        <span>
+                            27 Aug 2026
+                        </span>
+
+                        <span class="admin-active">
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <div class="admin-table-row">
+
+                        <span>
+                            Rahul
+                        </span>
+
+                        <span>
+                            rahul@example.com
+                        </span>
+
+                        <span>
+                            25 Aug 2026
+                        </span>
+
+                        <span class="admin-pending">
+                            Review
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==========================
+                 SELLER MANAGEMENT
+            =========================== -->
+
+            <section
+                class="admin-content-card"
+                id="sellers">
+
+                <div class="admin-section-title">
+
+                    <div>
+
+                        <p>SELLER MANAGEMENT</p>
+
+                        <h2>
+                            Seller activity
+                        </h2>
+
+                    </div>
+
+                    <button>
+                        Manage sellers
+                    </button>
+
+                </div>
+
+
+                <div class="seller-management-grid">
+
+                    <div>
+
+                        <span>
+                            Active sellers
+                        </span>
+
+                        <strong>
+                            164
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Pending approval
+                        </span>
+
+                        <strong>
+                            12
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Suspended
+                        </span>
+
+                        <strong>
+                            10
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==========================
+                 PRODUCT MANAGEMENT
+            =========================== -->
+
+            <section
+                class="admin-content-card"
+                id="products">
+
+                <div class="admin-section-title">
+
+                    <div>
+
+                        <p>PRODUCT MANAGEMENT</p>
+
+                        <h2>
+                            Marketplace inventory
+                        </h2>
+
+                    </div>
+
+                    <button>
+                        Manage products
+                    </button>
+
+                </div>
+
+
+                <div class="admin-product-grid">
+
+                    <div>
+
+                        <span>Active products</span>
+
+                        <strong>4,382</strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Under review</span>
+
+                        <strong>146</strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Out of stock</span>
+
+                        <strong>98</strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Reported products</span>
+
+                        <strong>23</strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==========================
+                 ORDERS
+            =========================== -->
+
+            <section
+                class="admin-content-card"
+                id="orders">
+
+                <div class="admin-section-title">
+
+                    <div>
+
+                        <p>ORDER MANAGEMENT</p>
+
+                        <h2>
+                            Order overview
+                        </h2>
+
+                    </div>
+
+                    <button>
+                        View orders
+                    </button>
+
+                </div>
+
+
+                <div class="admin-order-grid">
+
+                    <div>
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <strong>
+                            324
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Processing
+                        </span>
+
+                        <strong>
+                            682
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Delivered
+                        </span>
+
+                        <strong>
+                            7,486
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Cancelled
+                        </span>
+
+                        <strong>
+                            450
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==========================
+                 REPORTS
+            =========================== -->
+
+            <section
+                class="admin-content-card"
+                id="reports">
+
+                <div class="admin-section-title">
+
+                    <div>
+
+                        <p>ANALYTICS</p>
+
+                        <h2>
+                            Reports & insights
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-insights">
+
+                    <div>
+
+                        <span>
+                            Best category
+                        </span>
+
+                        <strong>
+                            Electronics
+                        </strong>
+
+                        <p>
+                            31% of marketplace sales
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Most active sellers
+                        </span>
+
+                        <strong>
+                            42 sellers
+                        </strong>
+
+                        <p>
+                            Generated 60% of sales
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Customer growth
+                        </span>
+
+                        <strong>
+                            +14.8%
+                        </strong>
+
+                        <p>
+                            Compared with last month
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==========================
+                 ADMIN PROFILE
+            =========================== -->
+
+            <section
+                class="admin-content-card"
+                id="profile">
+
+                <div class="admin-section-title">
+
+                    <div>
+
+                        <p>ACCOUNT</p>
+
+                        <h2>
+                            Admin profile
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div class="admin-profile-avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Srimathi Mart Administrator
+                        </h3>
+
+                        <p>
+                            admin@srimathimart.demo
+                        </p>
+
+                    </div>
+
+                    <button>
+                        Edit Profile
+                    </button>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- ADDED by the Java conversion: api.js holds every call to the
+         servlets and must load before script.js, which uses it. -->
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

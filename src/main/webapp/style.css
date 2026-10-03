@@ -1,0 +1,1473 @@
+/* =========================
+   SRIMATHI MART
+   GOLD + WHITE THEME
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #333333;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.shop-navbar {
+    width: 100%;
+    padding: 18px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #e5c76b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.shop-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.shop-logo span {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c9a227;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.shop-logo strong {
+    color: #b28a16;
+    font-size: 21px;
+}
+
+.desktop-nav {
+    display: flex;
+    gap: 28px;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: #444444;
+    font-weight: 500;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+    color: #b28a16;
+}
+
+
+/* =========================
+   NAV ACTIONS
+========================= */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-actions input {
+    width: 170px;
+    padding: 9px 12px;
+    border: 1px solid #d8bd62;
+    border-radius: 20px;
+    outline: none;
+}
+
+.nav-actions button {
+    border: 1px solid #d8bd62;
+    background: white;
+    color: #b28a16;
+    padding: 9px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.nav-actions button:hover {
+    background: #c9a227;
+    color: white;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.shop-hero {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background: linear-gradient(
+        120deg,
+        #ffffff,
+        #fffaf0
+    );
+    border-bottom: 1px solid #eee1b5;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-label {
+    color: #b28a16;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    line-height: 1.15;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: #b28a16;
+}
+
+.hero-content > p:not(.hero-label) {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #666666;
+    margin-bottom: 28px;
+}
+
+.shop-now-button {
+    border: none;
+    background: #c9a227;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.shop-now-button:hover {
+    background: #a98213;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-section {
+    padding: 70px 6%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 35px;
+}
+
+.section-heading p {
+    color: #b28a16;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    font-size: 32px;
+    color: #333333;
+}
+
+.section-heading span {
+    color: #777777;
+}
+
+
+/* PRODUCT GRID */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* PRODUCT CARD */
+
+.product-card {
+    background: white;
+    border: 1px solid #ead9a0;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.25s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(180, 145, 40, 0.15);
+}
+
+
+/* PRODUCT IMAGE */
+
+.product-image {
+    height: 260px;
+    background: #fffaf0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* PRODUCT INFO */
+
+.product-info {
+    padding: 20px;
+}
+
+.product-category {
+    color: #b28a16;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.product-info h3 {
+    margin: 8px 0;
+    color: #333333;
+    font-size: 20px;
+}
+
+.product-info p {
+    color: #777777;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 42px;
+}
+
+.product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 0;
+}
+
+.product-bottom strong {
+    color: #a98213;
+    font-size: 20px;
+}
+
+.product-bottom span {
+    color: #b28a16;
+}
+
+
+/* ADD CART */
+
+.add-cart-button {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #c9a227;
+    background: white;
+    color: #a98213;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.add-cart-button:hover {
+    background: #c9a227;
+    color: white;
+}
+
+
+/* =========================
+   ABOUT / CONTACT
+========================= */
+
+.simple-section {
+    padding: 60px 8%;
+    text-align: center;
+    background: #fffaf0;
+    border-top: 1px solid #eee1b5;
+}
+
+.simple-section p {
+    color: #b28a16;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.simple-section h2 {
+    color: #333333;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.shop-footer {
+    padding: 35px 8%;
+    text-align: center;
+    background: #ffffff;
+    border-top: 1px solid #e5c76b;
+}
+
+.shop-footer h3 {
+    color: #b28a16;
+    margin-bottom: 8px;
+}
+
+.shop-footer p {
+    color: #777777;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .shop-navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .desktop-nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-actions input {
+        width: 140px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading span {
+        display: block;
+        margin-top: 10px;
+    }
+}
+/* =========================
+   ENQUIRY FORM
+========================= */
+
+.enquiry-form {
+    max-width: 500px;
+    margin: 25px auto 0;
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid #e5c76b;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(180, 145, 40, 0.12);
+}
+
+.enquiry-form input,
+.enquiry-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    border: 1px solid #d8bd62;
+    border-radius: 8px;
+    outline: none;
+    font-family: Arial, sans-serif;
+    background: #fffdf7;
+}
+
+.enquiry-form input:focus,
+.enquiry-form textarea:focus {
+    border-color: #c9a227;
+}
+
+.enquiry-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.enquiry-form .add-cart-button {
+    background: #c9a227;
+    color: white;
+}
+
+.enquiry-form .add-cart-button:hover {
+    background: #a98213;
+}
+/* PRODUCT WISHLIST */
+
+.product-wishlist {
+    border: 1px solid #d8bd62;
+    background: #ffffff;
+    color: #b28a16;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.product-wishlist:hover {
+    background: #c9a227;
+    color: #ffffff;
+}
+/* =========================
+   BUYER LOGIN - CLEAN DESIGN
+========================= */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 35px;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.login-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 25px 0;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.login-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.login-card h1 {
+    margin: 8px 0;
+    font-size: 30px;
+}
+
+.login-description {
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.login-card form > label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: 600;
+}
+
+.login-card input[type="text"],
+.login-card input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+}
+
+.login-card input:focus {
+    border-color: #555;
+}
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 65px !important;
+}
+
+.show-password {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 0;
+    font-size: 14px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 25px 0 18px;
+    font-size: 13px;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.signup-text,
+.demo-note {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.demo-note {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+
+    .login-card {
+        padding: 25px 20px;
+    }
+
+    .login-card h1 {
+        font-size: 26px;
+    }
+
+    .login-options {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+}
+/* =========================
+   SELLER LOGIN - CLEAN DESIGN
+========================= */
+
+.seller-login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.seller-login-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 35px;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.seller-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.seller-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.seller-brand strong {
+    display: block;
+    font-size: 21px;
+}
+
+.seller-brand span {
+    display: block;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.seller-heading p {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.seller-heading h1 {
+    margin: 8px 0;
+    font-size: 30px;
+}
+
+.seller-heading span {
+    line-height: 1.5;
+}
+
+#sellerLoginForm {
+    margin-top: 25px;
+}
+
+#sellerLoginForm > label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: 600;
+}
+
+#sellerLoginForm input[type="email"],
+#sellerLoginForm input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+}
+
+#sellerLoginForm input:focus {
+    border-color: #555;
+}
+
+.seller-password {
+    position: relative;
+}
+
+.seller-password input {
+    padding-right: 65px !important;
+}
+
+#sellerTogglePassword {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.seller-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 0;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.seller-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.seller-login-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.seller-info {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.seller-info p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.seller-demo {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+
+    .seller-login-card {
+        padding: 25px 20px;
+    }
+
+    .seller-heading h1 {
+        font-size: 26px;
+    }
+
+    .seller-options {
+        flex-wrap: wrap;
+    }
+}
+/* =========================
+   ADMIN LOGIN - CLEAN DESIGN
+========================= */
+
+.admin-login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.admin-login-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 35px;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.admin-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.admin-brand strong {
+    display: block;
+    font-size: 21px;
+}
+
+.admin-brand span {
+    display: block;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.admin-security {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    margin-bottom: 22px;
+    border-radius: 10px;
+}
+
+.admin-security p {
+    margin: 3px 0 0;
+    font-size: 13px;
+}
+
+.admin-heading p {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.admin-heading h1 {
+    margin: 8px 0;
+    font-size: 30px;
+}
+
+.admin-heading span {
+    line-height: 1.5;
+}
+
+#adminLoginForm {
+    margin-top: 25px;
+}
+
+#adminLoginForm > label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: 600;
+}
+
+#adminLoginForm input[type="email"],
+#adminLoginForm input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+}
+
+#adminLoginForm input:focus {
+    border-color: #555;
+}
+
+.admin-password {
+    position: relative;
+}
+
+.admin-password input {
+    padding-right: 65px !important;
+}
+
+#adminTogglePassword {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.admin-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 0;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.admin-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.admin-login-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.admin-note {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.admin-note p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.admin-footer {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+
+    .admin-login-card {
+        padding: 25px 20px;
+    }
+
+    .admin-heading h1 {
+        font-size: 26px;
+    }
+
+    .admin-options {
+        flex-wrap: wrap;
+    }
+}
+/* =========================
+   MAIN LANDING PAGE - CLEAN
+========================= */
+
+.landing {
+    min-height: calc(100vh - 80px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    max-width: 1150px;
+    margin: auto;
+    padding: 60px 30px;
+}
+
+.intro h1 {
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.08;
+    margin: 15px 0 20px;
+}
+
+.intro h1 span {
+    display: block;
+}
+
+.description {
+    max-width: 560px;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.small-highlight {
+    margin-top: 25px;
+    font-weight: 600;
+}
+
+.role-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.role-heading {
+    margin-bottom: 5px;
+}
+
+.role-heading h2 {
+    margin: 5px 0;
+    font-size: 30px;
+}
+
+.role-heading span {
+    font-size: 14px;
+}
+
+.role-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.role-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.13);
+}
+
+.role-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    font-size: 27px;
+    flex-shrink: 0;
+}
+
+.role-content {
+    flex: 1;
+}
+
+.role-content h3 {
+    margin: 0 0 5px;
+    font-size: 20px;
+}
+
+.role-content p {
+    margin: 0 0 13px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.role-content button {
+    border: none;
+    padding: 11px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.footer {
+    text-align: center;
+    padding: 25px 20px;
+    line-height: 1.6;
+    font-size: 13px;
+}
+
+@media (max-width: 800px) {
+
+    .landing {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 40px 20px;
+    }
+
+    .intro h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .landing {
+        padding: 30px 15px;
+    }
+
+    .intro h1 {
+        font-size: 34px;
+    }
+
+    .role-card {
+        padding: 16px;
+    }
+
+    .role-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 23px;
+    }
+}
+/* =========================
+   ADMIN DASHBOARD
+========================= */
+
+.admin-dashboard-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.admin-dashboard-brand,
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-dashboard-brand strong,
+.admin-user strong {
+    display: block;
+    font-size: 16px;
+}
+
+.admin-dashboard-brand span,
+.admin-user span {
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin-top: 3px;
+}
+
+.admin-dashboard-logo,
+.admin-avatar,
+.admin-profile-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111827;
+    color: white;
+    font-weight: bold;
+}
+
+.admin-dashboard-layout {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    background: #f6f7f9;
+}
+
+.admin-sidebar {
+    width: 230px;
+    padding: 25px 15px;
+    background: #ffffff;
+    border-right: 1px solid #e5e5e5;
+}
+
+.admin-sidebar-title {
+    font-size: 11px;
+    font-weight: bold;
+    color: #999;
+    margin: 0 12px 15px;
+}
+
+.admin-menu {
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #444;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.admin-menu:hover,
+.admin-menu.active {
+    background: #f0f0f0;
+    color: #111;
+}
+
+.admin-logout {
+    margin-top: 25px;
+    color: #b42318;
+}
+
+.admin-dashboard-main {
+    flex: 1;
+    padding: 35px;
+    max-width: 1200px;
+}
+
+.admin-page-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.admin-page-heading p,
+.admin-section-title p,
+.admin-stat-card span,
+.admin-revenue-card p {
+    font-size: 11px;
+    font-weight: bold;
+    color: #888;
+    margin: 0 0 6px;
+}
+
+.admin-page-heading h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+}
+
+.admin-page-heading span {
+    color: #777;
+    font-size: 14px;
+}
+
+.admin-date {
+    background: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.admin-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.admin-stat-card,
+.admin-revenue-card,
+.admin-content-card {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.admin-stat-card strong {
+    display: block;
+    font-size: 26px;
+    margin: 8px 0;
+}
+
+.admin-stat-card p {
+    margin: 0;
+    font-size: 12px;
+    color: #16803c;
+}
+
+.admin-revenue-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-revenue-card h2 {
+    margin: 5px 0;
+    font-size: 28px;
+}
+
+.admin-revenue-card span {
+    font-size: 12px;
+    color: #16803c;
+}
+
+.revenue-bars {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    height: 100px;
+}
+
+.revenue-bars div {
+    width: 15px;
+    background: #111827;
+    border-radius: 4px 4px 0 0;
+}
+
+.admin-content-card {
+    margin-bottom: 20px;
+}
+
+.admin-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-section-title h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.admin-section-title button,
+.admin-profile button {
+    border: none;
+    background: #111827;
+    color: white;
+    padding: 9px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.admin-table {
+    width: 100%;
+}
+
+.admin-table-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.3fr 1fr;
+    gap: 10px;
+    padding: 14px 5px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.admin-table-head {
+    font-weight: bold;
+    color: #777;
+}
+
+.admin-active {
+    color: #16803c;
+}
+
+.admin-pending {
+    color: #b54708;
+}
+
+.seller-management-grid,
+.admin-product-grid,
+.admin-order-grid,
+.admin-insights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.admin-product-grid,
+.admin-order-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.seller-management-grid div,
+.admin-product-grid div,
+.admin-order-grid div,
+.admin-insights div {
+    padding: 18px;
+    background: #f8f8f8;
+    border-radius: 8px;
+}
+
+.seller-management-grid span,
+.admin-product-grid span,
+.admin-order-grid span,
+.admin-insights span {
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.seller-management-grid strong,
+.admin-product-grid strong,
+.admin-order-grid strong,
+.admin-insights strong {
+    font-size: 22px;
+}
+
+.admin-insights p {
+    font-size: 12px;
+    color: #777;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.admin-profile > div:nth-child(2) {
+    flex: 1;
+}
+
+.admin-profile h3 {
+    margin: 0 0 5px;
+}
+
+.admin-profile p {
+    margin: 0;
+    color: #777;
+    font-size: 13px;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+
+    .admin-dashboard-navbar {
+        padding: 15px;
+    }
+
+    .admin-sidebar {
+        display: none;
+    }
+
+    .admin-dashboard-main {
+        padding: 20px;
+    }
+
+    .admin-stat-grid,
+    .admin-product-grid,
+    .admin-order-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .seller-management-grid,
+    .admin-insights {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-page-heading {
+        display: block;
+    }
+
+    .admin-date {
+        margin-top: 15px;
+        display: inline-block;
+    }
+
+    .admin-table {
+        overflow-x: auto;
+    }
+
+    .admin-table-row {
+        min-width: 650px;
+    }
+}

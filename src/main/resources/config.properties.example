@@ -1,0 +1,47 @@
+# ---------------------------------------------------------------------------
+# Srimathi Mart - local configuration template
+#
+# Copy this file to src/main/resources/config.properties and fill in your own
+# values. config.properties is listed in .gitignore and must never be committed.
+#
+# Every key below can also be supplied as an environment variable (dots become
+# underscores, upper case) or as a -D system property, both of which take
+# precedence over this file. On a real server prefer those.
+#   DB_URL, DB_USERNAME, DB_PASSWORD, SEED_ADMIN_PASSWORD, ...
+# ---------------------------------------------------------------------------
+
+# --- Database -------------------------------------------------------------
+db.url=jdbc:mysql://localhost:3306/srimathi_mart?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&characterEncoding=UTF-8
+db.username=srimathi_app
+db.password=MartApp@123
+db.driver=com.mysql.cj.jdbc.Driver
+
+# --- Connection pool ------------------------------------------------------
+db.pool.maxSize=10
+db.pool.minIdle=2
+
+# --- Security -------------------------------------------------------------
+# bcrypt work factor. 12 is a sensible default; raise it as hardware improves.
+security.bcrypt.cost=12
+
+# Idle session timeout in seconds (1800 = 30 minutes).
+session.timeout.seconds=1800
+
+# --- Seed accounts --------------------------------------------------------
+# These are hashed at startup and written to the users table. There is no
+# admin signup page; this is the only way an ADMIN account comes into being.
+# Change these before you deploy anywhere.
+seed.admin.email=admin@srimathimart.com
+seed.admin.name=Srimathi Admin
+seed.admin.password=CHANGE_ME_Admin1
+
+# Set to false to skip creating the demo buyer and seller.
+seed.demo.enabled=true
+
+seed.seller.email=seller@srimathimart.com
+seed.seller.name=Demo Seller
+seed.seller.password=CHANGE_ME_Seller1
+
+seed.buyer.email=buyer@srimathimart.com
+seed.buyer.name=Demo Buyer
+seed.buyer.password=CHANGE_ME_Buyer1

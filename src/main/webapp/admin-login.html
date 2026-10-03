@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | Srimathi Mart</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="admin-login-page">
+
+        <section class="admin-login-card">
+
+            <a href="index.html" class="back-link">
+                ← Back to role selection
+            </a>
+
+            <div class="admin-brand">
+
+                <div class="admin-logo">
+                    S
+                </div>
+
+                <div>
+                    <strong>Srimathi Mart</strong>
+                    <span>Administration</span>
+                </div>
+
+            </div>
+
+
+            <div class="admin-security">
+
+                <span>🔐</span>
+
+                <div>
+                    <strong>Secure access</strong>
+                    <p>Authorized administrators only</p>
+                </div>
+
+            </div>
+
+
+            <div class="admin-heading">
+
+                <p>ADMINISTRATOR</p>
+
+                <h1>Welcome back.</h1>
+
+                <span>
+                    Sign in to manage the Srimathi Mart marketplace.
+                </span>
+
+            </div>
+
+
+            <form id="adminLoginForm">
+
+                <label for="adminEmail">
+                    Admin email
+                </label>
+
+                <input
+                    type="email"
+                    id="adminEmail"
+                    placeholder="Enter admin email"
+                >
+
+
+                <label for="adminPassword">
+                    Password
+                </label>
+
+                <div class="admin-password">
+
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        placeholder="Enter admin password"
+                    >
+
+                    <button
+                        type="button"
+                        id="adminTogglePassword"
+                    >
+                        Show
+                    </button>
+
+                </div>
+
+
+                <div class="admin-options">
+
+                    <label>
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+
+                    <a href="#" onclick="adminForgotPassword(event)">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="admin-login-button"
+                >
+                    Access Dashboard →
+                </button>
+
+            </form>
+
+
+            <div class="admin-note">
+
+                <span>ⓘ</span>
+
+                <p>
+                    This is a frontend demonstration.
+                    No real administrator authentication is connected.
+                </p>
+
+            </div>
+
+
+            <p class="admin-footer">
+                Srimathi Mart • Admin Portal
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ADDED by the Java conversion: api.js holds every call to the
+         servlets and must load before script.js, which uses it. -->
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

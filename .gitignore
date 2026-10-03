@@ -1,0 +1,64 @@
+# ---------------------------------------------------------------------------
+# Srimathi Mart - .gitignore
+# ---------------------------------------------------------------------------
+
+# --- Secrets. Never commit these. -----------------------------------------
+# config.properties holds the database password and the seed account
+# passwords. config.properties.example is the tracked template.
+src/main/resources/config.properties
+config.properties
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Build output ---------------------------------------------------------
+target/
+build/
+out/
+bin/
+*.war
+*.jar
+*.class
+dependency-reduced-pom.xml
+
+# --- IDE ------------------------------------------------------------------
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+.apt_generated/
+
+# NetBeans
+nbproject/
+nb-configuration.xml
+nbactions.xml
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# --- Logs and local databases ---------------------------------------------
+*.log
+logs/
+*.db
+*.mv.db
+*.trace.db
+
+# --- OS -------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Tomcat local run ------------------------------------------------------
+catalina.base_IS_UNDEFINED/
+work/
+temp/

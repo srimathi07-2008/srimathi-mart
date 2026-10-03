@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Srimathi Mart | Home Essentials</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         TOP NAVBAR
+    ========================== -->
+
+    <header class="shop-navbar">
+
+        <div class="shop-logo">
+            <span>S</span>
+            <strong>Srimathi Mart</strong>
+        </div>
+
+        <nav class="desktop-nav">
+
+            <a href="home.html" class="active">Home</a>
+
+            <a href="#categories">Categories</a>
+
+            <a href="#collections">Products</a>
+
+            <a href="#offers">Offers</a>
+
+            <a href="#contact">Contact</a>
+            <a
+            href="buyer-dashboard.html">Dashboard</a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <input
+                type="text"
+                id="productSearch"
+                placeholder="Search Home Essentials..."
+            >
+
+            <button onclick="searchProducts()" title="Search">
+                &#128269;
+            </button>
+
+            <button
+                id="wishlistButton"
+                onclick="showWishlist()"
+                title="Wishlist">
+                &#9825;
+            </button>
+
+            <button
+                id="cartButton"
+                onclick="window.location.href='cart.html'"
+                title="Cart">
+                &#128722; <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             AMAZON STYLE HERO
+        ========================== -->
+
+        <section class="shop-hero">
+
+            <div class="hero-content">
+
+                <p class="hero-label">
+                    WELCOME TO SRIMATHI MART
+                </p>
+
+                <h1>
+                    Everything You Need
+                    <span>For a Beautiful Home.</span>
+                </h1>
+
+                <p>
+                    Discover home essentials, decor, lighting,
+                    organizers and everyday products at great prices.
+                </p>
+
+                <button
+                    class="shop-now-button"
+                    onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})">
+                    Shop Now →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CATEGORIES
+        ========================== -->
+
+        <section
+            class="simple-section"
+            id="categories">
+
+            <p>SHOP BY CATEGORY</p>
+
+            <h2>
+                Find what your home needs
+            </h2>
+
+            <div class="category-grid">
+
+                <div class="category-box"
+                onclick="filterProducts('Home Decor')">
+                    &#127968;
+                    <h3>Home Decor</h3>
+                    <span>Beautiful spaces</span>
+                </div>
+
+                <div class="category-box"
+                onclick="filterProducts('Lighting')">
+                    &#128161;
+                    <h3>Lighting</h3>
+                    <span>Brighten your home</span>
+                </div>
+
+                <div class="category-box"
+                onclick="filterProducts('plants')">
+                    &#129716;
+                    <h3>Plants</h3>
+                    <span>Fresh & natural</span>
+                </div>
+
+                <div class="category-box"
+                onclick="filterProducts('Storage')">
+                    &#128451;&#65039;
+                    <h3>Storage</h3>
+                    <span>Organize easily</span>
+                </div>
+
+                <div class="category-box"
+                onclick="filterProducts('Bedroom')">
+                    &#128719;&#65039;
+                    <h3>Bedroom</h3>
+                    <span>Comfort essentials</span>
+                </div>
+
+                <div class="category-box"
+                onclick="filterProducts('Kitchen')">
+                    &#127869;&#65039;
+                    <h3>Kitchen</h3>
+                    <span>Everyday essentials</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             OFFERS
+        ========================== -->
+
+        <section
+            class="simple-section"
+            id="offers">
+
+            <p>DEALS OF THE DAY</p>
+
+            <h2>
+                Great products. Great prices.
+            </h2>
+
+            <span>
+                Explore selected home essentials and special offers.
+            </span>
+
+            <br><br>
+
+            <button
+                class="shop-now-button"
+                onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})">
+                View Deals →
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             PRODUCTS
+        ========================== -->
+
+        <section
+            class="products-section"
+            id="collections">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p>OUR PRODUCTS</p>
+
+                    <h2>
+                        Popular Home Essentials
+                    </h2>
+
+                </div>
+
+                <span>
+                    Shop your everyday favourites
+                </span>
+
+            </div>
+
+
+            <!-- IMPORTANT:
+                 Keep this ID because script.js uses it. -->
+
+            <div
+                class="product-grid"
+                id="productGrid">
+
+
+                <!-- PRODUCT 1 -->
+
+                <article
+                    class="product-card"
+                    data-product-id="1">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/decorative-cushion.jpg"
+                            alt="Decorative Cushions">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Home Decor
+                        </span>
+
+                        <h3>
+                            Decorative Cushions
+                        </h3>
+
+                        <p>
+                            Elegant cushions for beautiful interiors.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>&#8377;599</strong>
+
+                            <span>
+                                &#9733; 4.8
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="product-wishlist"
+                            onclick="toggleProductWishlist(this)">
+                            &#9825;
+                        </button>
+
+                        <button
+                            class="add-cart-button"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 2 -->
+
+                <article
+                    class="product-card"
+                    data-product-id="2">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/indoor-plants-planters.jpg"
+                            alt="Indoor Plants and Planters">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Home Decor
+                        </span>
+
+                        <h3>
+                            Indoor Plants &amp; Planters
+                        </h3>
+
+                        <p>
+                            Fresh decorative plants for your home.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>&#8377;699</strong>
+
+                            <span>
+                                &#9733; 4.7
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="product-wishlist"
+                            onclick="toggleProductWishlist(this)">
+                            &#9825;
+                        </button>
+
+                        <button
+                            class="add-cart-button"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 3 -->
+
+                <article
+                    class="product-card"
+                    data-product-id="3">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/lamps-lanterns.jpg"
+                            alt="Lamps and Lanterns">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Lighting
+                        </span>
+
+                        <h3>
+                            Lamps &amp; Lanterns
+                        </h3>
+
+                        <p>
+                            Elegant lighting for a warm atmosphere.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>&#8377;899</strong>
+
+                            <span>
+                                &#9733; 4.9
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="product-wishlist"
+                            onclick="toggleProductWishlist(this)">
+                            &#9825;
+                        </button>
+
+                        <button
+                            class="add-cart-button"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 4 -->
+
+                <article
+                    class="product-card"
+                    data-product-id="4">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/wall-art-frames.jpg"
+                            alt="Wall Art Frames">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Wall Decor
+                        </span>
+
+                        <h3>
+                            Wall Art Frames
+                        </h3>
+
+                        <p>
+                            Stylish artwork for elegant walls.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>&#8377;799</strong>
+
+                            <span>
+                                &#9733; 4.6
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="product-wishlist"
+                            onclick="toggleProductWishlist(this)">
+                            &#9825;
+                        </button>
+
+                        <button
+                            class="add-cart-button"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 5 -->
+
+                <article
+                    class="product-card"
+                    data-product-id="5">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/tabletop-decor.jpg"
+                            alt="Tabletop Decor">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Table Decor
+                        </span>
+
+                        <h3>
+                            Tabletop Decor
+                        </h3>
+
+                        <p>
+                            Elegant pieces for tables and shelves.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>&#8377;499</strong>
+
+                            <span>
+                                &#9733; 4.7
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="product-wishlist"
+                            onclick="toggleProductWishlist(this)">
+                            &#9825;
+                        </button>
+
+                        <button
+                            class="add-cart-button"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 6 -->
+
+                <article
+                    class="product-card"
+                    data-product-id="6">
+
+                    <div class="product-image">
+
+                        <img
+                            src="images/decorative-mirrors.jpg"
+                            alt="Decorative Mirrors">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Home Decor
+                        </span>
+
+                        <h3>
+                            Decorative Mirrors
+                        </h3>
+
+                        <p>
+                            Beautiful mirrors for stylish interiors.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>&#8377;</strong>
+
+                            <span>
+                                &#9733; 4.8
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="product-wishlist"
+                            onclick="toggleProductWishlist(this)">
+                            &#9825;
+                        </button>
+
+                        <button
+                            class="add-cart-button"
+                            onclick="addToCart(this)">
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+<!-- =========================
+             REVIEWS
+        ========================== -->
+
+        <section class="simple-section" id="reviews">
+
+            <p>PRODUCT REVIEWS</p>
+
+            <h2>Rate Our Products</h2>
+
+            <div class="review-box">
+
+                <label for="reviewProduct">
+                    Select Product
+                </label>
+
+                <select id="reviewProduct">
+                    <option value="1">Decorative Cushions</option>
+                    <option value="2">Indoor Plants & Planters</option>
+                    <option value="3">Lamps & Lanterns</option>
+                    <option value="4">Wall Art Frames</option>
+                    <option value="5">Tabletop Decor</option>
+                    <option value="6">Decorative Mirrors</option>
+                </select>
+
+                <label for="reviewRating">
+                    Rating
+                </label>
+
+                <select id="reviewRating">
+                    <option value="5">★★★★★ 5</option>
+                    <option value="4">★★★★☆ 4</option>
+                    <option value="3">★★★☆☆ 3</option>
+                    <option value="2">★★☆☆☆ 2</option>
+                    <option value="1">★☆☆☆☆ 1</option>
+                </select>
+
+                <textarea
+                    id="reviewComment"
+                    placeholder="Write your review...">
+                </textarea>
+
+                <button
+                    class="shop-now-button"
+                    onclick="submitReview()">
+                    Submit Review
+                </button>
+
+                <div id="reviewMessage"></div>
+
+                <div id="reviewList">
+                    <p>Loading reviews...</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section
+            class="simple-section"
+            id="about">
+
+            <p>ABOUT SRIMATHI MART</p>
+
+            <h2>
+                Making everyday shopping simple.
+            </h2>
+
+            <span>
+                Discover useful and beautiful products
+                for every part of your home.
+            </span>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section
+            class="simple-section"
+            id="contact">
+
+            <p>CONTACT US</p>
+
+            <h2>
+                We are here to help.
+            </h2>
+
+            <span>
+                Have a question about our products?
+                We would love to hear from you.
+            </span>
+
+            <div class="contact-details">
+
+                <p>&#128222; +91 XXXXX XXXXX</p>
+
+                <p>&#9993;&#65039; srimathimart@gmail.com</p>
+
+                <p>&#128205; Tamil Nadu, India</p>
+
+            </div>
+
+            <button
+                class="shop-now-button"
+                onclick="showEnquiryForm()">
+                Send Enquiry
+            </button>
+
+
+            <div
+                id="enquiryForm"
+                class="enquiry-form"
+                style="display: none;">
+
+                <input
+                    type="text"
+                    id="enquiryName"
+                    placeholder="Your Name"
+                    oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '')"
+                >
+
+                <input
+                    type="email"
+                    id="enquiryEmail"
+                    placeholder="Your Email"
+                >
+
+                <input
+                    type="tel"
+                    id="enquiryPhone"
+                    placeholder="Phone Number"
+                    maxlength="10"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                >
+
+                <textarea
+                    id="enquiryMessage"
+                    placeholder="Your Message"></textarea>
+
+                <button
+                    class="add-cart-button"
+                    onclick="sendEnquiry()">
+                    Send
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="shop-footer">
+
+        <h3>
+            Srimathi Mart
+        </h3>
+
+        <p>
+            Your home essentials marketplace.
+        </p>
+
+    </footer>
+
+
+    <!-- BACKEND JAVASCRIPT -->
+
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+<script>
+
+function loadReviews() {
+
+    const productId =
+        document.getElementById("reviewProduct").value;
+
+    fetch("api/reviews?productId=" + productId)
+        .then(response => response.json())
+        .then(data => {
+
+            const reviewList =
+                document.getElementById("reviewList");
+
+            if (!data.ok || !data.reviews || data.reviews.length === 0) {
+
+                reviewList.innerHTML =
+                    "<p>No reviews yet for this product.</p>";
+
+                return;
+            }
+
+            let html =
+                "<h3>Customer Reviews ⭐</h3>";
+
+            html +=
+                "<p>Average Rating: " +
+                data.averageRating +
+                " / 5</p>";
+
+            data.reviews.forEach(review => {
+
+                html += `
+                    <div class="review-item">
+                        <strong>⭐ ${review.rating}/5</strong>
+                        <p>${review.comment}</p>
+                        <small>${review.createdAt}</small>
+                    </div>
+                `;
+            });
+
+            reviewList.innerHTML = html;
+
+        })
+        .catch(error => {
+
+            console.error("Review loading error:", error);
+
+            document.getElementById("reviewList").innerHTML =
+                "<p>Unable to load reviews.</p>";
+        });
+}
+
+
+function submitReview() {
+
+    const productId =
+        document.getElementById("reviewProduct").value;
+
+    const rating =
+        document.getElementById("reviewRating").value;
+
+    const comment =
+        document.getElementById("reviewComment").value.trim();
+
+    const message =
+        document.getElementById("reviewMessage");
+
+    if (comment === "") {
+        message.innerHTML =
+            "<p>Please write a review.</p>";
+        return;
+    }
+
+    const body =
+        "productId=" + encodeURIComponent(productId) +
+        "&rating=" + encodeURIComponent(rating) +
+        "&comment=" + encodeURIComponent(comment);
+
+    fetch("api/reviews", {
+        method: "POST",
+        headers: {
+            "Content-Type":
+                "application/x-www-form-urlencoded"
+        },
+        body: body
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        if (!data.ok) {
+            message.innerHTML =
+                "<p>" + data.error + "</p>";
+            return;
+        }
+
+        message.innerHTML =
+            "<p>Review submitted successfully! ⭐</p>";
+
+        document.getElementById("reviewComment").value = "";
+
+        loadReviews();
+    })
+    .catch(error => {
+        console.error("Review submit error:", error);
+        message.innerHTML =
+            "<p>Something went wrong.</p>";
+    });
+}
+
+
+document.getElementById("reviewProduct")
+    .addEventListener("change", loadReviews);
+
+loadReviews();
+
+</script>
+</body>
+
+</html>

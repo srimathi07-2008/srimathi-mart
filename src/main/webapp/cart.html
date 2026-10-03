@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Srimathi Mart | Cart</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header class="shop-navbar">
+
+        <div class="shop-logo">
+            <span>S</span>
+            <strong>Srimathi Mart</strong>
+        </div>
+
+        <nav class="desktop-nav">
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="home.html#categories">
+                Categories
+            </a>
+
+            <a href="home.html#products">
+                Products
+            </a>
+
+            <a href="home.html#offers">
+                Offers
+            </a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <button title="Wishlist">
+                &#9825;
+            </button>
+
+            <button title="Cart" class="active-cart">
+                &#128722; <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CART PAGE -->
+
+    <main class="cart-page">
+
+        <div class="cart-heading">
+
+            <p>YOUR SHOPPING BAG</p>
+
+            <h1>
+                Your Cart &#128722;
+            </h1>
+
+            <span>
+                Review your selected products before checkout.
+            </span>
+
+        </div>
+
+
+        <section class="cart-layout">
+
+            <!-- CART ITEMS -->
+
+            <div class="cart-items">
+
+                <div class="empty-cart" id="emptyCart">
+
+                    <div class="empty-cart-icon">
+                        &#128722;
+                    </div>
+
+                    <h2>
+                        Your cart is empty
+                    </h2>
+
+                    <p>
+                        Add something you love from
+                        Srimathi Mart.
+                    </p>
+
+                    <a href="home.html">
+                        Continue Shopping &#8594;
+                    </a>
+
+                </div>
+
+                <div id="cartProductList"></div>
+
+            </div>
+
+
+            <!-- ORDER SUMMARY -->
+
+            <aside class="cart-summary">
+
+                <p>
+                    ORDER SUMMARY
+                </p>
+
+                <h2>
+                    Summary
+                </h2>
+
+                <div class="summary-row">
+
+                    <span>
+                        Items
+                    </span>
+
+                    <strong id="summaryItems">
+                        0
+                    </strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="cartSubtotal">
+                        &#8377;0
+                    </strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <strong>
+                        FREE
+                    </strong>
+
+                </div>
+
+                <hr>
+
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="cartTotal">
+                        &#8377;0
+                    </strong>
+
+                </div>
+
+                <button class="checkout-button"
+                onclick="window.location.href='/srimathi-mart/checkout.html'">
+                    Proceed to Checkout &#8594;
+                </button>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="shop-footer">
+
+        <div>
+
+            <h3>
+                Srimathi Mart
+            </h3>
+
+            <p>
+                A modern marketplace for
+                everyday discoveries.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>
+                Marketplace
+            </h4>
+
+            <p>Categories</p>
+            <p>Products</p>
+            <p>Offers</p>
+
+        </div>
+
+        <div>
+
+            <h4>
+                Support
+            </h4>
+
+            <p>Help Centre</p>
+            <p>Contact Us</p>
+            <p>Terms &amp; Privacy</p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Srimathi Mart | Order Confirmed</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NEW page, added by the Java conversion. It reuses the existing
+         .shop-navbar, .cart-page, .cart-heading and .empty-cart classes so
+         it matches the rest of the site without any CSS changes. -->
+
+    <header class="shop-navbar">
+
+        <div class="shop-logo">
+            <span>S</span>
+            <strong>Srimathi Mart</strong>
+        </div>
+
+        <nav class="desktop-nav">
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="home.html#categories">
+                Categories
+            </a>
+
+            <a href="home.html#products">
+                Products
+            </a>
+
+            <a href="home.html#offers">
+                Offers
+            </a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <button title="Wishlist">
+                ♡
+            </button>
+
+            <button title="Cart"
+                    onclick="window.location.href='cart.html'">
+                🛒 <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main class="cart-page">
+
+        <div class="cart-heading">
+
+            <p>THANK YOU</p>
+
+            <h1>
+                Order Confirmed ✓
+            </h1>
+
+            <span>
+                Your order has been placed successfully.
+            </span>
+
+        </div>
+
+
+        <section class="cart-layout">
+
+            <div class="cart-items">
+
+                <div class="empty-cart">
+
+                    <div class="empty-cart-icon">
+                        📦
+                    </div>
+
+                    <h2>
+                        Your order is on its way
+                    </h2>
+
+                    <p>
+                        We have received your order and the seller has
+                        been notified.
+                    </p>
+
+                    <a href="home.html">
+                        Continue Shopping →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <aside class="cart-summary">
+
+                <p>
+                    ORDER SUMMARY
+                </p>
+
+                <h2>
+                    Summary
+                </h2>
+
+                <div class="summary-row">
+
+                    <span>
+                        Order number
+                    </span>
+
+                    <strong id="orderNumber">
+                        —
+                    </strong>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>
+                        Payment reference
+                    </span>
+
+                    <strong id="paymentRef">
+                        —
+                    </strong>
+
+                </div>
+                <div class="summary-row">
+
+    <span>
+        Payment Method
+    </span>
+
+    <strong id="paymentMethod">
+        —
+    </strong>
+
+</div>
+
+                <div class="summary-row">
+
+                    <span>
+                        Payment
+                    </span>
+
+                    <strong>
+                        Mock (demo)
+                    </strong>
+
+                </div>
+
+                <hr>
+
+                <div class="summary-total">
+
+                    <span>
+                        Total paid
+                    </span>
+
+                    <strong id="orderTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <footer class="shop-footer">
+
+        <div>
+
+            <h3>
+                Srimathi Mart
+            </h3>
+
+            <p>
+                A modern marketplace for
+                everyday discoveries.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>
+                Marketplace
+            </h4>
+
+            <p>Categories</p>
+            <p>Products</p>
+            <p>Offers</p>
+
+        </div>
+
+        <div>
+
+            <h4>
+                Support
+            </h4>
+
+            <p>Help Centre</p>
+            <p>Contact Us</p>
+            <p>Terms & Privacy</p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+    (function () {
+
+        const params = new URLSearchParams(window.location.search);
+
+        const number = document.getElementById("orderNumber");
+        const reference = document.getElementById("paymentRef");
+        const total = document.getElementById("orderTotal");
+        const method=document.getElementById("paymentMethod");
+        if (number) {
+            number.textContent = "#" + smEscape(params.get("id") || "—");
+        }
+
+        if (reference) {
+            reference.textContent = smEscape(params.get("ref") || "—");
+        }
+
+        if (total) {
+            total.textContent = smFormatPrice(params.get("total") || 0);
+        }
+        if(method){
+            method.textContent=smEscape(params.get("method")||"_");
+        }
+    })();
+    </script>
+
+</body>
+
+</html>

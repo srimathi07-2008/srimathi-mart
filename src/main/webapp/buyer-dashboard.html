@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Srimathi Mart | Buyer Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="shop-navbar">
+
+        <div class="shop-logo">
+            <span>S</span>
+            <strong>Srimathi Mart</strong>
+        </div>
+
+        <nav class="desktop-nav">
+            <a href="home.html">Home</a>
+            <a href="home.html#categories">Categories</a>
+            <a href="home.html#products">Products</a>
+            <a href="home.html#offers">Offers</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <button title="Cart"
+                    onclick="window.location.href='cart.html'">
+                &#128722; <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main class="cart-page">
+
+        <div class="cart-heading">
+
+            <p>MY ACCOUNT</p>
+
+            <h1>Buyer Dashboard</h1>
+
+            <span>
+                Manage your account, cart and orders.
+            </span>
+
+        </div>
+
+
+        <section class="cart-layout">
+
+            <div class="cart-items">
+
+                <!-- PROFILE -->
+
+                <div class="simple-section">
+
+                    <h2>&#128100; My Profile</h2>
+
+                    <p>
+                        Name:
+                        <strong id="userName">Buyer</strong>
+                    </p>
+
+                    <p>
+                        Email:
+                        <strong id="userEmail">—</strong>
+                    </p>
+
+                </div>
+
+
+                <!-- ORDERS -->
+
+                <div class="simple-section">
+
+                    <h2>&#128230; My Orders</h2>
+                    <div id="myOrders"></div>
+                    <p>
+                        View your previous orders and order status.
+                    </p>
+
+                    <button
+                        class="checkout-button"
+                        onclick="window.location.href='order-confirmation.html'">
+
+                        View Orders &#8594;
+
+                    </button>
+
+                </div>
+
+
+                <!-- CART -->
+
+                <div class="simple-section">
+
+                    <h2>&#128722; My Cart</h2>
+
+                    <p>
+                        View the products currently added to your cart.
+                    </p> 
+
+                    <button
+                        class="checkout-button"
+                        onclick="window.location.href='cart.html'">
+
+                        View Cart &#8594;
+
+                    </button>
+
+                </div>
+
+
+                <!-- SHOPPING -->
+
+                <div class="simple-section">
+
+                    <h2>&#127968; Continue Shopping</h2>
+
+                    <p>
+                        Explore home essentials and products.
+                    </p>
+
+                    <button
+                        class="checkout-button"
+                        onclick="window.location.href='home.html'">
+
+                        Shop Now &#8594;
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACCESS -->
+
+            <aside class="cart-summary">
+
+                <p>QUICK ACCESS</p>
+
+                <h2>Dashboard</h2>
+
+
+                <div class="summary-row">
+
+                    <span>Profile</span>
+
+                    <strong>&#128100;</strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>Orders</span>
+
+                    <strong>&#128230;</strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>Cart</span>
+
+                    <strong>&#128722;</strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>Home</span>
+
+                    <strong>&#127968;</strong>
+
+                </div>
+
+                <hr>
+<button
+    class="checkout-button"
+    onclick="logoutUser()">
+    Logout
+</button>
+
+<br><br>
+
+                <button
+                    class="checkout-button"
+                    onclick="window.location.href='home.html'">
+
+                    Back to Home &#8594;
+
+                </button>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <footer class="shop-footer">
+
+        <h3>Srimathi Mart</h3>
+
+        <p>
+            A modern marketplace for everyday home essentials.
+        </p>
+
+    </footer>
+
+
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+    <script>
+        
+function logoutUser() {
+    fetch("api/logout", {
+        method: "POST"
+    })
+    .then(() => {
+        window.location.href = "login.html";
+    })
+    .catch(error => {
+        console.error("Logout error:", error);
+    });
+}
+</script>
+<script>
+fetch("api/orders")
+    .then(response => response.json())
+    .then(data => {
+
+        const ordersBox = document.getElementById("myOrders");
+
+        if (data.orders.length === 0) {
+            ordersBox.innerHTML = "<p>No orders found.</p>";
+            return;
+        }
+
+        ordersBox.innerHTML = data.orders.map(order => `
+            <div class="summary-row">
+                <span>Order #${order.id}</span>
+                <strong>${order.status}</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Total</span>
+                <strong>₹${order.totalAmount}</strong>
+            </div>
+        `).join("");
+
+    })
+    .catch(error => {
+        console.error("Orders error:", error);
+    });
+    
+</script>
+<script>
+fetch("api/session")
+    .then(response => response.json())
+    .then(data => {
+
+        if (data.authenticated && data.user) {
+
+            document.getElementById("userName").textContent =
+                data.user.fullName;
+
+            document.getElementById("userEmail").textContent =
+                data.user.email;
+
+        }
+
+    })
+    .catch(error => {
+        console.error("Profile error:", error);
+    });
+</script>
+</body>
+
+</html>

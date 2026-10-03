@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Seller Login | Srimathi Mart</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="seller-login-page">
+
+        <section class="seller-login-card">
+
+            <a href="index.html" class="back-link">
+                ← Back to role selection
+            </a>
+
+            <div class="seller-brand">
+                <div class="seller-logo">S</div>
+
+                <div>
+                    <strong>Srimathi Mart</strong>
+                    <span>Seller Centre</span>
+                </div>
+            </div>
+
+            <div class="seller-heading">
+
+                <p>SELLER ACCOUNT</p>
+
+                <h1>Grow your store.</h1>
+
+                <span>
+                    Sign in to manage your products,
+                    orders and sales.
+                </span>
+
+            </div>
+
+
+            <form id="sellerLoginForm">
+
+                <label for="sellerEmail">
+                    Seller email
+                </label>
+
+                <input
+                    type="email"
+                    id="sellerEmail"
+                    placeholder="Enter your seller email"
+                >
+
+
+                <label for="sellerPassword">
+                    Password
+                </label>
+
+                <div class="seller-password">
+
+                    <input
+                        type="password"
+                        id="sellerPassword"
+                        placeholder="Enter your password"
+                    >
+
+                    <button
+                        type="button"
+                        id="sellerTogglePassword"
+                    >
+                        Show
+                    </button>
+
+                </div>
+
+
+                <div class="seller-options">
+
+                    <label>
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+
+                    <a href="#" onclick="sellerForgotPassword(event)">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="seller-login-button"
+                >
+                    Enter Seller Centre →
+                </button>
+
+            </form>
+
+
+            <div class="seller-info">
+
+                <span> </span>
+
+                <p>
+                    Manage your marketplace store
+                    from one simple dashboard.
+                </p>
+
+            </div>
+
+
+            <p class="seller-demo">
+                New seller?
+                <a href="seller-register.html">Create a seller account</a>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ADDED by the Java conversion: api.js holds every call to the
+         servlets and must load before script.js, which uses it. -->
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
