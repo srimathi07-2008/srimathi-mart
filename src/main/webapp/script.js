@@ -1113,6 +1113,49 @@ async function loadAdminDashboard() {
         console.error("Admin dashboard error:", error);
     }
 }
+async function loadAdminUsers() {
+    try {
+        const response = await fetch("api/admin/users", {
+            method: "GET",
+            credentials: "same-origin"
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            console.error(data);
+            return;
+        }
+
+        const table = document.querySelector(".admin-table");
+
+        if (!table) return;
+
+        const rows = table.querySelectorAll(".admin-table-row:not(.admin-table-head)");
+
+        rows.forEach(row => row.remove());
+
+        data.users.forEach(user => {
+            const row = document.createElement("div");
+            row.className = "admin-table-row";
+
+            row.innerHTML = `
+                <span>${user.fullName}</span>
+                <span>${user.email}</span>
+                <span>${user.joined}</span>
+                <span class="${user.active ? "admin-active" : "admin-pending"}">
+                    ${user.active ? "Active" : "Inactive"}
+                </span>
+            `;
+
+            table.appendChild(row);
+        });
+
+    } catch (error) {
+        console.error("Admin users error:", error);
+    }
+}
 if (window.location.pathname.includes("admin-dashboard.html")) {
     loadAdminDashboard();
+    loadAdminUsers();
 }

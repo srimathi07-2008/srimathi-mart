@@ -16,7 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/api/admin/dashboard")
+@WebServlet("/api/admin/*")
 public class AdminServlet extends BaseServlet {
 
     private static final long serialVersionUID = 1L;
@@ -34,56 +34,113 @@ public class AdminServlet extends BaseServlet {
                 throw new AuthException("Admin access required.");
             }
 
-            try {
-                Connection connection = Db.getDataSource().getConnection();
+            String path = request.getPathInfo();
 
-                try {
-                    long users = count(
-                            connection,
-                            "SELECT COUNT(*) FROM users"
-                    );
-
-                    long sellers = count(
-                            connection,
-                            "SELECT COUNT(*) FROM users WHERE role='SELLER'"
-                    );
-
-                    long products = count(
-                            connection,
-                            "SELECT COUNT(*) FROM products"
-                    );
-
-                    long orders = count(
-                            connection,
-                            "SELECT COUNT(*) FROM orders"
-                    );
-
-                    Json json = new Json()
-                            .beginObject()
-                            .put("ok", true)
-                            .put("users", users)
-                            .put("sellers", sellers)
-                            .put("products", products)
-                            .put("orders", orders)
-                            .endObject();
-
-                    HttpUtil.writeJson(
-                            response,
-                            HttpServletResponse.SC_OK,
-                            json
-                    );
-
-                } finally {
-                    connection.close();
-                }
-
-            } catch (SQLException ex) {
-                throw new RuntimeException(
-                        "Could not load admin dashboard.",
-                        ex
-                );
+            if ("/users".equals(path)) {
+                loadUsers(response);
+            } else {
+                loadDashboard(response);
             }
         });
+    }
+
+    private void loadDashboard(HttpServletResponse response)
+            throws IOException {
+
+        try (Connection connection =
+                     Db.getDataSource().getConnection()) {
+
+            long users = count(
+                    connection,
+                    "SELECT COUNT(*) FROM users"
+            );
+
+            long sellers = count(
+                    connection,
+                    "SELECT COUNT(*) FROM users WHERE role='SELLER'"
+            );
+
+            long products = count(
+                    connection,
+                    "SELECT COUNT(*) FROM products"
+            );
+
+            long orders = count(
+                    connection,
+                    "SELECT COUNT(*) FROM orders"
+            );
+
+            Json json = new Json()
+                    .beginObject()
+                    .put("ok", true)
+                    .put("users", users)
+                    .put("sellers", sellers)
+                    .put("products", products)
+                    .put("orders", orders)
+                    .endObject();
+
+            HttpUtil.writeJson(
+                    response,
+                    HttpServletResponse.SC_OK,
+                    json
+            );
+
+        } catch (SQLException ex) {
+            throw new RuntimeException(
+                    "Could not load admin dashboard.",
+                    ex
+            );
+        }
+    }
+
+    private void loadUsers(HttpServletResponse response)
+            throws IOException {
+
+        String sql =
+                "SELECT id, full_name, email, role, active, created_at "
+                + "FROM users ORDER BY id DESC";
+
+        try (Connection connection =
+                     Db.getDataSource().getConnection();
+             PreparedStatement statement =
+                     connection.prepareStatement(sql);
+             ResultSet rs = statement.executeQuery()) {
+
+            Json json = new Json()
+                    .beginObject()
+                    .put("ok", true)
+                    .name("users")
+                    .beginArray();
+
+            while (rs.next()) {
+
+                json.beginObject()
+                        .put("id", rs.getLong("id"))
+                        .put("fullName", rs.getString("full_name"))
+                        .put("email", rs.getString("email"))
+                        .put("role", rs.getString("role"))
+                        .put("joined", rs.getTimestamp("created_at") == null
+                                ? ""
+                                : rs.getTimestamp("created_at").toString())
+                        .put("active", rs.getBoolean("active"))
+                        .endObject();
+            }
+
+            json.endArray()
+                    .endObject();
+
+            HttpUtil.writeJson(
+                    response,
+                    HttpServletResponse.SC_OK,
+                    json
+            );
+
+        } catch (SQLException ex) {
+            throw new RuntimeException(
+                    "Could not load users.",
+                    ex
+            );
+        }
     }
 
     private long count(Connection connection, String sql)
