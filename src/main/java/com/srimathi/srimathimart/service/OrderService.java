@@ -107,6 +107,15 @@ public class OrderService {
         return TransactionTemplate.read(
                 connection -> orderDao.findByBuyer(connection, buyerId));
     }
+    public long countForSeller(final long sellerId) {
+    return TransactionTemplate.read(
+            connection -> orderDao.countBySeller(connection, sellerId));
+}
+
+public BigDecimal revenueForSeller(final long sellerId) {
+    return TransactionTemplate.read(
+            connection -> orderDao.revenueBySeller(connection, sellerId));
+}
 
     /**
      * Generates a fake payment reference so the confirmation screen has

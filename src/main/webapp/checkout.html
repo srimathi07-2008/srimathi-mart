@@ -66,17 +66,14 @@
                         type="text"
                         id="customerName"
                         placeholder="Full Name"
-                        pattern="[A-Za-z]+"
-                        title="Please enter letters only">
+                        oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')">
 
                     <input
                         type="tel"
                         id="customerPhone"
                         placeholder="Phone Number"
                         maxlength="10"
-                        pattern="[0-9]{10}"
-                        inputmode="numeric"
-                        required>
+                        oninput="this.value=this.value.replace(/[^0-9]/g, '')">
 
                     <textarea
                         id="customerAddress"
@@ -184,7 +181,7 @@
                     <span>Subtotal</span>
 
                     <strong id="checkoutSubtotal">
-                        ₹0
+                        &#8377;0
                     </strong>
 
                 </div>
@@ -209,7 +206,7 @@
                     <span>Total</span>
 
                     <strong id="checkoutTotal">
-                        ₹0
+                        &#8377;0
                     </strong>
 
                 </div>
@@ -219,7 +216,7 @@
                     class="checkout-button"
                     onclick="placeOrder()">
 
-                    Place Order →
+                    Place Order 
 
                 </button>
 
@@ -263,7 +260,7 @@
 
                 box.innerHTML = `
                     <p>
-                        💵 Cash on Delivery selected
+                         Cash on Delivery selected
                     </p>
                 `;
 
@@ -383,7 +380,7 @@ function showPaymentDetails(method) {
 </script>
 <script>
 function demoPaymentSuccess() {
-    alert("Demo Payment Successful! ✅");
+    alert("Demo Payment Successful! ");
 }
 </script>
 </body>

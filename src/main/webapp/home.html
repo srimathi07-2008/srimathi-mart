@@ -97,7 +97,7 @@
                 <button
                     class="shop-now-button"
                     onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})">
-                    Shop Now →
+                    Shop Now 
                 </button>
 
             </div>
@@ -191,7 +191,7 @@
             <button
                 class="shop-now-button"
                 onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})">
-                View Deals →
+                View Deals 
             </button>
 
         </section>
@@ -537,7 +537,7 @@
 
                         <div class="product-bottom">
 
-                            <strong>&#8377;</strong>
+                            <strong>&#8377;600</strong>
 
                             <span>
                                 &#9733; 4.8
@@ -594,11 +594,11 @@
                 </label>
 
                 <select id="reviewRating">
-                    <option value="5">★★★★★ 5</option>
-                    <option value="4">★★★★☆ 4</option>
-                    <option value="3">★★★☆☆ 3</option>
-                    <option value="2">★★☆☆☆ 2</option>
-                    <option value="1">★☆☆☆☆ 1</option>
+                    <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733; 5</option>
+                    <option value="4">&#9733;&#9733;&#9733;&#9733; 4</option>
+                    <option value="3">&#9733;&#9733;&#9733;3</option>
+                    <option value="2">&#9733;&#9733; 2</option>
+                    <option value="1">&#9733; 1</option>
                 </select>
 
                 <textarea
@@ -767,7 +767,7 @@ function loadReviews() {
             }
 
             let html =
-                "<h3>Customer Reviews ⭐</h3>";
+                "<h3>Customer Reviews</h3>";
 
             html +=
                 "<p>Average Rating: " +
@@ -778,7 +778,7 @@ function loadReviews() {
 
                 html += `
                     <div class="review-item">
-                        <strong>⭐ ${review.rating}/5</strong>
+                        <strong> ${review.rating}/5</strong>
                         <p>${review.comment}</p>
                         <small>${review.createdAt}</small>
                     </div>
@@ -841,7 +841,7 @@ function submitReview() {
         }
 
         message.innerHTML =
-            "<p>Review submitted successfully! ⭐</p>";
+            "<p>Review submitted successfully! </p>";
 
         document.getElementById("reviewComment").value = "";
 
@@ -861,6 +861,125 @@ document.getElementById("reviewProduct")
 loadReviews();
 
 </script>
+<!-- =========================
+     AI CHATBOT
+========================= -->
+
+<button id="chatbotButton" onclick="toggleChatbot()">
+    &#129302;
+</button>
+
+<div id="chatbotBox">
+
+    <div class="chatbot-header">
+        <strong>Srimathi Mart Assistant</strong>
+        <button onclick="toggleChatbot()">×</button>
+    </div>
+
+    <div id="chatMessages">
+        <div class="bot-message">
+            Hi! &#128075; How can I help you with Srimathi Mart?
+        </div>
+    </div>
+
+    <div class="chatbot-input">
+
+        <input
+            type="text"
+            id="chatInput"
+            placeholder="Ask something..."
+            onkeydown="if(event.key==='Enter') sendChatMessage()"
+        >
+
+        <button onclick="sendChatMessage()">
+            Send
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function toggleChatbot() {
+
+    const box = document.getElementById("chatbotBox");
+
+    if (box.style.display === "none" || box.style.display === "") {
+        box.style.display = "block";
+    } else {
+        box.style.display = "none";
+    }
+}
+
+
+function sendChatMessage() {
+
+    const input =
+        document.getElementById("chatInput");
+
+    const message =
+        input.value.trim();
+
+    if (message === "") {
+        return;
+    }
+
+    const messages =
+        document.getElementById("chatMessages");
+
+    messages.innerHTML +=
+        '<div class="user-message">' +
+        escapeHtml(message) +
+        '</div>';
+
+    input.value = "";
+
+    fetch("api/chat", {
+        method: "POST",
+        headers: {
+            "Content-Type":
+                "application/x-www-form-urlencoded"
+        },
+        body:
+            "message=" +
+            encodeURIComponent(message)
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        messages.innerHTML +=
+            '<div class="bot-message">' +
+            escapeHtml(data.reply) +
+            '</div>';
+
+        messages.scrollTop =
+            messages.scrollHeight;
+    })
+    .catch(error => {
+
+        console.error("Chatbot error:", error);
+
+        messages.innerHTML +=
+            '<div class="bot-message">' +
+            'Sorry, something went wrong.' +
+            '</div>';
+    });
+}
+
+
+function escapeHtml(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+}
+
+</script>
+
 </body>
 
 </html>

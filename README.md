@@ -1,7 +1,7 @@
 # Srimathi Mart
 
-A student e-commerce marketplace, converted from a static HTML/CSS/JS prototype
-into a Java web application.
+A student e-commerce web application focused on home decoration items
+and wedding/event flower decorations.
 
 The original front end is preserved: the same `style.css`, the same pages, the
 same layout, colours and copy. Only the data layer changed — pages that used to
@@ -76,6 +76,8 @@ Rules the code holds to:
 | GET/POST | `/api/cart` | BUYER | View / add / update / remove |
 | POST | `/api/checkout` | BUYER | Place order (mock payment) |
 | GET | `/api/orders` | BUYER | Order history |
+| GET/POST | `/api/reviews` | public/BUYER | View and submit product reviews and ratings |
+| POST | `/api/chat` | public | AI assistant for decoration and website help |
 
 ---
 
@@ -263,7 +265,7 @@ to `/srimathi-mart`, and run.
 ### Full happy path
 
 1. Sign in as the seller. Go to *Add product* (`seller.html`), create one with a
-   name, price, stock, category and an emoji such as `🎧` for the image.
+   name, price, stock, category and a suitable decoration image.
 2. Sign out, sign in as the buyer, open `home.html` — the new product appears in
    the grid. Try the search box and a category tile.
 3. *Add to Cart*, open the cart, change the quantity, remove a line.

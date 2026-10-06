@@ -67,27 +67,27 @@
             </p>
 
             <a href="#" class="seller-menu active">
-                📊 Dashboard
+                 Dashboard
             </a>
 
             <a href="#products" class="seller-menu">
-                📦 Products
+                 Products
             </a>
 
             <a href="#orders" class="seller-menu">
-                🛍️ Orders
+                 Orders
             </a>
 
             <a href="#sales" class="seller-menu">
-                📈 Sales
+                 Sales
             </a>
 
             <a href="#profile" class="seller-menu">
-                👤 My Profile
+                 My Profile
             </a>
 
             <a href="index.html" class="seller-menu logout" onclick="smLogout(event)">
-                ↩ Logout
+                 Logout
             </a>
 
         </aside>
@@ -108,12 +108,11 @@
                     <p>SELLER OVERVIEW</p>
 
                     <h1>
-                        Good day, Seller 👋
+                        Good day, Seller 
                     </h1>
 
                     <span>
-                        Here's what's happening
-                        with your store today.
+
                     </span>
 
                 </div>
@@ -135,12 +134,12 @@
 
                 <div class="seller-stat-card">
 
-                    <span>PRODUCTS</span>
+                    <span>TOTAL PRODUCTS</span>
 
-                    <strong id="statProducts">48</strong>
+                    <strong id="statProducts">0</strong>
 
                     <p>
-                        ↑ 8 this month
+                    Your listed products
                     </p>
 
                 </div>
@@ -148,12 +147,12 @@
 
                 <div class="seller-stat-card">
 
-                    <span>ORDERS</span>
+                    <span>TOTAL ORDERS</span>
 
-                    <strong>126</strong>
+                    <strong>0</strong>
 
                     <p>
-                        ↑ 12% this month
+                    Orders received
                     </p>
 
                 </div>
@@ -161,12 +160,12 @@
 
                 <div class="seller-stat-card">
 
-                    <span>SALES</span>
+                    <span>STOCK VALUE</span>
 
-                    <strong id="statStockValue">₹84,560</strong>
+                    <strong id="statStockValue">&#8377;0.00</strong>
 
                     <p>
-                        ↑ 18% this month
+                        Currennt inventary value
                     </p>
 
                 </div>
@@ -176,10 +175,10 @@
 
                     <span>REVENUE</span>
 
-                    <strong>₹72,410</strong>
+                    <strong>&#8377;0.00</strong>
 
                     <p>
-                        ↑ 15% this month
+                        Total sales revenue
                     </p>
 
                 </div>
@@ -208,7 +207,8 @@
 
                     </div>
 
-                    <button>
+                    <button
+                    onclick="document.getElementById('products').scrollIntoView({ behaviour:'smooth' });">
                         View all
                     </button>
 
@@ -320,7 +320,7 @@
 
                     <div>
 
-                        <p>RECENT ACTIVITY</p>
+                        <p>ORDER ACTIVITY</p>
 
                         <h2>
                             Recent orders
@@ -340,19 +340,19 @@
                     <div class="order-item">
 
                         <div>
-                            <strong>#SM1024</strong>
+                            <strong>No orders yet</strong>
 
                             <span>
-                                Wireless Headphones
+                                your recent orders will appear hear
                             </span>
                         </div>
 
                         <strong>
-                            ₹1,499
+                            &#8377;0
                         </strong>
 
                         <span class="order-status">
-                            Processing
+                            Waiting
                         </span>
 
                     </div>

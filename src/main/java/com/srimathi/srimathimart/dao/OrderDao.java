@@ -37,4 +37,6 @@ public interface OrderDao {
     long countAll(Connection connection);
 
 java.math.BigDecimal totalRevenue(Connection connection);
+long countBySeller(Connection connection, long sellerId);
+java.math.BigDecimal revenueBySeller(Connection connection, long sellerId);
 }

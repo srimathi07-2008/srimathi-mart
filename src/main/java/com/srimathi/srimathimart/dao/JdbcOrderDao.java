@@ -140,6 +140,56 @@ public java.math.BigDecimal totalRevenue(final Connection connection) {
         throw new DataAccessException("Could not calculate revenue.", ex);
     }
 }
+@Override
+public long countBySeller(final Connection connection, final long sellerId) {
+    String sql =
+            "SELECT COUNT(DISTINCT o.id) "
+            + "FROM orders o "
+            + "JOIN order_items oi ON o.id = oi.order_id "
+            + "JOIN products p ON oi.product_id = p.id "
+            + "WHERE p.seller_id = ?";
+
+    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+
+        statement.setLong(1, sellerId);
+
+        try (ResultSet rs = statement.executeQuery()) {
+            return rs.next() ? rs.getLong(1) : 0L;
+        }
+
+    } catch (SQLException ex) {
+        throw new DataAccessException(
+                "Could not count seller orders.", ex);
+    }
+}
+
+@Override
+public java.math.BigDecimal revenueBySeller(
+        final Connection connection,
+        final long sellerId) {
+
+    String sql =
+            "SELECT COALESCE(SUM(oi.unit_price * oi.quantity), 0) "
+            + "FROM order_items oi "
+            + "JOIN orders o ON o.id = oi.order_id "
+            + "JOIN products p ON oi.product_id = p.id "
+            + "WHERE p.seller_id = ?";
+
+    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+
+        statement.setLong(1, sellerId);
+
+        try (ResultSet rs = statement.executeQuery()) {
+            return rs.next()
+                    ? rs.getBigDecimal(1)
+                    : java.math.BigDecimal.ZERO;
+        }
+
+    } catch (SQLException ex) {
+        throw new DataAccessException(
+                "Could not calculate seller revenue.", ex);
+    }
+}
     private void loadItems(final Connection connection, final Order order) throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement(FIND_ITEMS_SQL)) {
             statement.setLong(1, order.getId());
