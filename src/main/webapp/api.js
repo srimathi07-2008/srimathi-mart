@@ -119,7 +119,7 @@ function smFormatPrice(amount) {
 
     const value = Number(amount) || 0;
 
-    return "₹" + value.toLocaleString("en-IN", {
+    return "\u20B9" + value.toLocaleString("en-IN", {
         minimumFractionDigits: value % 1 === 0 ? 0 : 2,
         maximumFractionDigits: 2
     });
@@ -154,15 +154,18 @@ function smEscape(text) {
 // ==============================
 
 function smProductImage(imageUrl) {
-
     const value = String(imageUrl || "").trim();
 
     if (/^(https?:)?\/\//i.test(value) || value.startsWith("/")) {
-        return '<img src="' + smEscape(value) + '" alt="" ' +
-               'style="max-width:100%;max-height:100%;object-fit:contain;">';
+        return '<img src="' + smEscape(value) + '" alt="Product image" ' +
+               'style="width:100%;height:100%;object-fit:contain;">';
     }
 
-    return smEscape(value || "🛍️");
+    if (value) {
+        return '<span>' + smEscape(value) + '</span>';
+    }
+
+    return '<span>\uD83D\uDECD\uFE0F</span>';
 }
 
 
@@ -223,6 +226,7 @@ function smRenderProducts(products) {
         JSON.parse(localStorage.getItem("srimathiWishlist")) || [];
 
     grid.innerHTML = products.map(function (product) {
+        console.log("Product:", product.name, "Image:", product.imageUrl);
 
         const inWishlist =
             wishlist.some(item => item.name === product.name);
@@ -231,7 +235,11 @@ function smRenderProducts(products) {
                 <article class="product-card" data-product-id="${product.id}">
 
                     <div class="product-image">
-                        ${smProductImage(product.imageUrl)}
+                       ${smProductImage(
+    product.name.toLowerCase().includes("decorative cushion")
+        ? "/srimathi-mart/images/decorative-cushion.jpg"
+        : product.imageUrl
+)}
                     </div>
 
                     <div class="product-info">
@@ -262,7 +270,7 @@ function smRenderProducts(products) {
 
                         </div>
 <button class="product-wishlist" onclick="toggleProductWishlist(this)">
-    ${inWishlist ? "♥" : "♡"}
+    ${inWishlist ? "&#9829;" : "&#9825;"}
 </button>
                      <button class="add-cart-button" onclick="addToCart(this)"
                              ${product.stockQuantity > 0 ? "" : "disabled"}>

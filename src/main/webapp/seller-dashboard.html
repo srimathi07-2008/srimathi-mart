@@ -335,75 +335,29 @@
                 </div>
 
 
-                <div class="order-list">
+<div class="order-list">
 
-                    <div class="order-item">
+    <div class="order-item">
 
-                        <div>
-                            <strong>No orders yet</strong>
+        <div>
+            <strong>No orders yet</strong>
 
-                            <span>
-                                your recent orders will appear hear
-                            </span>
-                        </div>
+            <span>
+                your recent orders will appear hear
+            </span>
+        </div>
 
-                        <strong>
-                            &#8377;0
-                        </strong>
+        <strong>
+            &#8377;0
+        </strong>
 
-                        <span class="order-status">
-                            Waiting
-                        </span>
+        <span class="order-status">
+            Waiting
+        </span>
 
-                    </div>
+    </div>
 
-
-                    <div class="order-item">
-
-                        <div>
-                            <strong>#SM1023</strong>
-
-                            <span>
-                                Classic Handbag
-                            </span>
-                        </div>
-
-                        <strong>
-                            ₹1,249
-                        </strong>
-
-                        <span class="order-delivered">
-                            Delivered
-                        </span>
-
-                    </div>
-
-
-                    <div class="order-item">
-
-                        <div>
-                            <strong>#SM1022</strong>
-
-                            <span>
-                                Everyday Sneakers
-                            </span>
-                        </div>
-
-                        <strong>
-                            ₹1,899
-                        </strong>
-
-                        <span class="order-status">
-                            Shipped
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
+</div>
 
             <!-- ==========================
                  SALES SUMMARY
@@ -437,7 +391,7 @@
                         </span>
 
                         <strong>
-                            ₹8,240
+                            &#8377;8,240
                         </strong>
 
                     </div>
@@ -450,7 +404,7 @@
                         </span>
 
                         <strong>
-                            ₹31,680
+                            &#8377;31,680
                         </strong>
 
                     </div>
@@ -463,7 +417,7 @@
                         </span>
 
                         <strong>
-                            ₹72,410
+                            &#8377;72,410
                         </strong>
 
                     </div>
@@ -515,7 +469,8 @@
 
                     </div>
 
-                    <button>
+                    <button type="button"
+                    onclick="editSellerProfile()">
                         Edit Profile
                     </button>
 
@@ -648,6 +603,29 @@
         });
 
     })();
+    function editSellerProfile() {
+    const profile = document.querySelector(".seller-profile");
+
+    const nameElement = profile.querySelector("h3");
+    const emailElement = profile.querySelector("p");
+
+    const name = prompt("Enter Store Name:", nameElement.textContent.trim());
+
+    if (!name || name.trim() === "") {
+        return;
+    }
+
+    const email = prompt("Enter Email:", emailElement.textContent.trim());
+
+    if (!email || email.trim() === "") {
+        return;
+    }
+
+    nameElement.textContent = name.trim();
+    emailElement.textContent = email.trim();
+
+    alert("Profile updated successfully!");
+}
     </script>
 
 </body>

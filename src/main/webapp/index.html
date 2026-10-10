@@ -4,14 +4,241 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Srimathi Mart | Shop Smart, Live Better</title>
+    <title>Srimathi Mart | Home & Wedding Decorations</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===== GOLDEN INDEX PAGE ===== */
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fffdf8;
+            color: #3d321f;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 7%;
+            background: #ffffff;
+            border-bottom: 1px solid #ead9a7;
+            box-shadow: 0 2px 10px rgba(150, 110, 20, 0.08);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 25px;
+            font-weight: bold;
+            color: #b8860b;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d4af37, #f5df91);
+            color: white;
+            font-size: 23px;
+        }
+
+        .nav-tagline {
+            color: #806b3c;
+            font-size: 14px;
+        }
+
+        .landing {
+            min-height: calc(100vh - 150px);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 60px 8%;
+        }
+
+        .intro {
+            max-width: 600px;
+        }
+
+        .eyebrow {
+            color: #b8860b;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .intro h1 {
+            font-size: 52px;
+            line-height: 1.15;
+            margin: 18px 0;
+            color: #3b301c;
+        }
+
+        .intro h1 span {
+            display: block;
+            color: #c49a27;
+        }
+
+        .description {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #75694e;
+            max-width: 530px;
+        }
+
+        .small-highlight {
+            margin-top: 28px;
+            display: inline-block;
+            padding: 12px 20px;
+            border: 1px solid #d4af37;
+            border-radius: 25px;
+            color: #9a7410;
+            background: #fffaf0;
+            font-weight: bold;
+        }
+
+        .small-highlight span {
+            color: #d4af37;
+            margin-right: 7px;
+        }
+
+        .role-section {
+            max-width: 550px;
+        }
+
+        .role-heading p {
+            margin: 0;
+            color: #b8860b;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .role-heading h2 {
+            margin: 8px 0;
+            font-size: 32px;
+            color: #3b301c;
+        }
+
+        .role-heading span {
+            color: #806f50;
+        }
+
+        .role-card {
+            margin-top: 18px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: #ffffff;
+            border: 1px solid #ead9a7;
+            border-radius: 16px;
+            box-shadow: 0 5px 18px rgba(150, 110, 20, 0.08);
+            transition: 0.25s;
+        }
+
+        .role-card:hover {
+            transform: translateY(-3px);
+            border-color: #d4af37;
+            box-shadow: 0 8px 22px rgba(150, 110, 20, 0.15);
+        }
+
+        .role-icon {
+            min-width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: #fff7df;
+            font-size: 27px;
+        }
+
+        .role-content {
+            flex: 1;
+        }
+
+        .role-content h3 {
+            margin: 0 0 5px;
+            color: #a77a08;
+            font-size: 21px;
+        }
+
+        .role-content p {
+            margin: 0 0 13px;
+            color: #766b55;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .role-content button {
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #c49a27, #d4af37);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .role-content button:hover {
+            background: #a77a08;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #fffaf0;
+            border-top: 1px solid #ead9a7;
+            color: #806f50;
+            font-size: 13px;
+        }
+
+        .footer p {
+            margin: 5px;
+        }
+
+        @media (max-width: 850px) {
+            .landing {
+                grid-template-columns: 1fr;
+                padding: 40px 6%;
+            }
+
+            .intro h1 {
+                font-size: 40px;
+            }
+
+            .nav-tagline {
+                display: none;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .navbar {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .role-card {
+                padding: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <header class="navbar">
 
         <div class="logo">
@@ -20,7 +247,7 @@
         </div>
 
         <div class="nav-tagline">
-            Your everyday marketplace
+            Home & Wedding Decorations
         </div>
 
     </header>
@@ -29,31 +256,32 @@
     <!-- Main Landing Section -->
     <main class="landing">
 
-        <!-- Left Content -->
+        <!-- Left Side -->
         <section class="intro">
 
-            <p class="eyebrow">WELCOME TO SRIMATHI MART</p>
+            <p class="eyebrow">
+                &#10022; WELCOME TO SRIMATHI MART
+            </p>
 
             <h1>
-                Everything you need,
-                <span>all in one place.</span>
+                Make every space
+                <span>beautiful & memorable.</span>
             </h1>
 
             <p class="description">
-                Discover products from trusted sellers, explore new
-                collections and enjoy a simple shopping experience
-                designed for everyone.
+                Discover elegant home decoration items and beautiful
+                wedding & event flower decorations, all in one place.
             </p>
 
             <div class="small-highlight">
                 <span>&#10022;</span>
-                Shop &#8226; Sell &#8226; Manage
+                Decorate &#10022; Celebrate &#10022; Enjoy
             </div>
 
         </section>
 
 
-        <!-- Role Selection -->
+        <!-- Right Side -->
         <section class="role-section">
 
             <div class="role-heading">
@@ -64,63 +292,69 @@
 
 
             <!-- Buyer -->
-            <div class="role-card buyer-card">
+            <div class="role-card">
 
-                <div class="role-icon">&#128717;</div>
+                <div class="role-icon">&#127803;</div>
 
                 <div class="role-content">
+
                     <h3>Buyer</h3>
 
                     <p>
-                        Browse products, discover offers
-                        and manage your shopping.
+                        Explore home decor and wedding decorations
+                        and shop your favourite items.
                     </p>
 
                     <button onclick="goToPage('login.html')">
-                        Continue Shopping →
+                        Continue Shopping &#8594;
                     </button>
+
                 </div>
 
             </div>
 
 
             <!-- Seller -->
-            <div class="role-card seller-card">
+            <div class="role-card">
 
                 <div class="role-icon">&#127978;</div>
 
                 <div class="role-content">
+
                     <h3>Seller</h3>
 
                     <p>
-                        Manage your products, orders
-                        and marketplace sales.
+                        Add and manage your decoration products
+                        and orders.
                     </p>
 
                     <button onclick="goToPage('seller-login.html')">
-                        Enter Seller Space →
+                        Enter Seller Space &#8594;
                     </button>
+
                 </div>
 
             </div>
 
 
             <!-- Admin -->
-            <div class="role-card admin-card">
+            <div class="role-card">
 
                 <div class="role-icon">&#9881;</div>
 
                 <div class="role-content">
+
                     <h3>Admin</h3>
 
                     <p>
-                        Monitor users, sellers, products
+                        Manage users, sellers, products
                         and marketplace activity.
                     </p>
 
                     <button onclick="goToPage('admin-login.html')">
-                        Open Admin Panel →
+                        Open Admin Panel &#8594;
                     </button>
+
                 </div>
 
             </div>
@@ -138,14 +372,12 @@
         </p>
 
         <p>
-            A modern student e-commerce marketplace project.
+            Home Decor &#128717; Wedding Decor &#128717; Flower Decorations &#128144;
         </p>
 
     </footer>
 
 
-    <!-- ADDED by the Java conversion: api.js holds every call to the
-         servlets and must load before script.js, which uses it. -->
     <script src="api.js"></script>
     <script src="script.js"></script>
 

@@ -7,6 +7,233 @@
     <title>Buyer Login | Srimathi Mart</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fffdf8;
+            color: #3d321f;
+        }
+
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+            background:
+                radial-gradient(circle at top left, #fff5d6, transparent 35%),
+                #fffdf8;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 470px;
+            padding: 38px;
+            background: #ffffff;
+            border: 1px solid #ead9a7;
+            border-radius: 20px;
+            box-shadow: 0 12px 35px rgba(150, 110, 20, 0.15);
+        }
+
+        .back-link {
+            color: #a77a08;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            color: #d4af37;
+        }
+
+        .login-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 28px;
+            color: #a77a08;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c49a27, #f1d77b);
+            color: white;
+            font-size: 26px;
+        }
+
+        .login-label {
+            margin: 28px 0 8px;
+            color: #b8860b;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .login-card h1 {
+            margin: 0 0 9px;
+            color: #3b301c;
+            font-size: 34px;
+        }
+
+        .login-description {
+            margin-bottom: 25px;
+            color: #75694e;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        form label {
+            display: block;
+            margin: 16px 0 7px;
+            color: #4c4028;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px 14px;
+            border: 1px solid #ddcc9b;
+            border-radius: 9px;
+            background: #fffdf8;
+            color: #3d321f;
+            outline: none;
+        }
+
+        form input:focus {
+            border-color: #c49a27;
+            box-shadow: 0 0 0 3px rgba(196, 154, 39, 0.12);
+        }
+
+        .password-box {
+            display: flex;
+            gap: 8px;
+        }
+
+        .password-box input {
+            flex: 1;
+        }
+
+        .show-password {
+            padding: 0 14px;
+            border: 1px solid #d4af37;
+            border-radius: 9px;
+            background: #fff8e5;
+            color: #9a7410;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 18px 0;
+            font-size: 13px;
+        }
+
+        .remember {
+            color: #75694e;
+        }
+
+        .login-options a,
+        .signup-text a {
+            color: #a77a08;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #b8860b, #d4af37);
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.25);
+        }
+
+        .login-button:hover {
+            background: #a77a08;
+            transform: translateY(-1px);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 25px 0 18px;
+            color: #9a8965;
+            font-size: 12px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #ead9a7;
+        }
+
+        .social-buttons button {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddcc9b;
+            border-radius: 9px;
+            background: #fffdf8;
+            color: #4c4028;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .social-buttons button:hover {
+            border-color: #d4af37;
+            background: #fffaf0;
+        }
+
+        .social-buttons span {
+            color: #b8860b;
+            margin-right: 8px;
+        }
+
+        .signup-text {
+            text-align: center;
+            margin-top: 22px;
+            color: #75694e;
+            font-size: 13px;
+        }
+
+        .demo-note {
+            text-align: center;
+            margin-top: 18px;
+            color: #9a8965;
+            font-size: 11px;
+        }
+
+        @media (max-width: 520px) {
+            .login-card {
+                padding: 25px;
+            }
+
+            .login-card h1 {
+                font-size: 29px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +243,7 @@
         <section class="login-card">
 
             <a href="index.html" class="back-link">
-                 Back to role selection
+                &#8592; Back to role selection
             </a>
 
             <div class="login-logo">
@@ -32,7 +259,6 @@
                 Sign in to continue exploring products and offers.
             </p>
 
-
             <form id="buyerLoginForm">
 
                 <label for="email">Email or phone number</label>
@@ -42,7 +268,6 @@
                     id="email"
                     placeholder="Enter your email or phone"
                 >
-
 
                 <label for="password">Password</label>
 
@@ -64,7 +289,6 @@
 
                 </div>
 
-
                 <div class="login-options">
 
                     <label class="remember">
@@ -78,18 +302,15 @@
 
                 </div>
 
-
                 <button type="submit" class="login-button">
                     Login to Srimathi Mart
                 </button>
 
             </form>
 
-
             <div class="divider">
                 <span>or continue with</span>
             </div>
-
 
             <div class="social-buttons">
 
@@ -100,10 +321,11 @@
 
             </div>
 
-
             <p class="signup-text">
                 New to Srimathi Mart?
-                <a href="#" onclick="signupDemo(event)">Create an account</a>
+                <a href="#" onclick="signupDemo(event)">
+                    Create an account
+                </a>
             </p>
 
             <p class="demo-note">
@@ -114,9 +336,6 @@
 
     </main>
 
-
-    <!-- ADDED by the Java conversion: api.js holds every call to the
-         servlets and must load before script.js, which uses it. -->
     <script src="api.js"></script>
     <script src="script.js"></script>
 

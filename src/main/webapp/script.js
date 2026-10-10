@@ -320,7 +320,7 @@ function addToCart(button) {
         quantity: 1
     }).then(function (data) {
 
-        button.textContent = "Added ✓";
+        button.textContent = "Added";
         button.disabled = true;
 
         const cartCount =
@@ -690,7 +690,7 @@ document.addEventListener(
     function() {
 
         displayCart();
-
+        loadCheckoutSummary();
         smRefreshCartCount();
 
 
@@ -737,7 +737,42 @@ document.addEventListener(
 
     }
 );
+function loadCheckoutSummary() {
 
+    smGet("/api/cart")
+        .then(function(data) {
+
+            const checkoutItems =
+                document.getElementById("checkoutItems");
+
+            const checkoutSubtotal =
+                document.getElementById("checkoutSubtotal");
+
+            const checkoutTotal =
+                document.getElementById("checkoutTotal");
+
+            if (checkoutItems) {
+                checkoutItems.textContent =
+                    data.totalQuantity || 0;
+            }
+
+            if (checkoutSubtotal) {
+                checkoutSubtotal.textContent =
+                    smFormatPrice(data.subtotal || 0);
+            }
+
+            if (checkoutTotal) {
+                checkoutTotal.textContent =
+                    smFormatPrice(data.total || 0);
+            }
+
+        })
+        .catch(function(error) {
+
+            console.error("Checkout cart error:", error);
+
+        });
+}
 
 // ==============================
 // CHECKOUT
@@ -804,107 +839,26 @@ if (checkoutButton) {
 // ==============================
 // CATEGORY FILTER
 // ==============================
+async function filterProducts(category) {
 
-function filterProducts(category) {
+    const selectedCategory = category.trim();
 
-    const products =
-        document.querySelectorAll(".product-card");
+    // Set the selected category for the API
+    smActiveCategory = selectedCategory;
 
+    // Load products from the backend using the selected category
+    await smLoadProducts();
 
-    products.forEach(function(product) {
-
-        const productCategory =
-            product.querySelector(
-                ".product-category"
-            ).textContent.trim();
-
-
-        if (category === "Home Decor") {
-
-            if (productCategory === "Home Decor") {
-
-                product.style.display = "block";
-
-            } else {
-
-                product.style.display = "none";
-
-            }
-
-        } else {
-
-            product.style.display = "block";
-
-        }
-
-    });
-
-
-    const productsSection =
-        document.getElementById("products");
+    // Scroll to the products section
+    const productsSection = document.getElementById("collections")
+        || document.getElementById("productGrid");
 
     if (productsSection) {
-
         productsSection.scrollIntoView({
             behavior: "smooth"
         });
-
-    }
-
-}
-
-
-function filterProducts(category) {
-
-    const products = document.querySelectorAll(".product-card");
-
-    products.forEach(function(product) {
-
-        const productCategory =
-            product.querySelector(".product-category")
-            .textContent
-            .trim();
-
-        if (category === "Home Decor") {
-
-            product.style.display =
-                productCategory === "Home Decor" ? "block" : "none";
-
-        } else if (category === "Lighting") {
-
-            product.style.display =
-                productCategory === "Lighting" ? "block" : "none";
-
-        } else if (category === "Plants") {
-
-            product.style.display =
-                product.querySelector("h3")
-                    .textContent
-                    .toLowerCase()
-                    .includes("plant")
-                    ? "block"
-                    : "none";
-
-        } else {
-
-            product.style.display = "none";
-        }
-
-    });
-
-    const productsSection =
-        document.getElementById("collections");
-
-    if (productsSection) {
-
-        productsSection.scrollIntoView({
-            behavior: "smooth"
-        });
-
     }
 }
-
-
 // ==============================
 // ENQUIRY
 // ==============================
@@ -1109,7 +1063,7 @@ async function loadAdminDashboard() {
             cards[3].textContent = data.orders;
         }
         if (cards.length >= 5) {
-    cards[4].textContent = "&#8377;" + Number(data.revenue || 0).toFixed(2);
+    cards[4].textContent = "\u20B9" + Number(data.revenue || 0).toFixed(2);
 }
 
     } catch (error) {
@@ -1162,3 +1116,30 @@ if (window.location.pathname.includes("admin-dashboard.html")) {
     loadAdminDashboard();
     loadAdminUsers();
 }
+function smProductImage(imageUrl) {
+    if (!imageUrl) {
+        return '<div class="cart-image-placeholder">Image unavailable</div>';
+    }
+
+    const img = document.createElement("img");
+
+    img.src = imageUrl;
+    img.alt = "Product image";
+    img.className = "cart-product-image";
+
+    img.onerror = function () {
+        this.onerror = null;
+        this.alt = "Image unavailable";
+        this.src = "images/image-placeholder.png";
+    };
+
+    return img.outerHTML;
+}
+// Load all products when the home page opens
+document.addEventListener("DOMContentLoaded", function () {
+    if (document.getElementById("productGrid")) {
+        smActiveCategory = "";
+        smActiveKeyword = "";
+        smLoadProducts();
+    }
+});

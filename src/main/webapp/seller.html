@@ -28,7 +28,7 @@
     </header>
 
     <main>
-        <h1>Seller Dashboard 👨‍💼</h1>
+        <h1>Seller Dashboard </h1>
 
         <p>Welcome to your seller space.</p>
 <h2>Add New Product</h2>
@@ -180,8 +180,10 @@ function editSellerProduct(productId) {
             prompt("Enter new stock quantity:", product.stockQuantity);
         const newCategory =
             prompt("Enter new category:", product.category);
-        const newImage =
-            prompt("Enter new image URL or emoji:", product.imageUrl);
+        const newImage = prompt(
+    "Enter image path (example: /srimathi-mart/images/money-plant.jpg):",
+    product.imageUrl
+);
 
         smPost("/api/seller/products", {
             action: "update",

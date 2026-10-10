@@ -7,6 +7,224 @@
     <title>Seller Login | Srimathi Mart</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fffdf8;
+            color: #3d321f;
+        }
+
+        .seller-login-page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+            background:
+                radial-gradient(circle at top left, #fff5d6, transparent 35%),
+                #fffdf8;
+        }
+
+        .seller-login-card {
+            width: 100%;
+            max-width: 470px;
+            padding: 38px;
+            background: #ffffff;
+            border: 1px solid #ead9a7;
+            border-radius: 20px;
+            box-shadow: 0 12px 35px rgba(150, 110, 20, 0.15);
+        }
+
+        .back-link {
+            color: #a77a08;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            color: #d4af37;
+        }
+
+        .seller-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .seller-logo {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c49a27, #f1d77b);
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .seller-brand strong {
+            display: block;
+            color: #a77a08;
+            font-size: 22px;
+        }
+
+        .seller-brand span {
+            display: block;
+            margin-top: 3px;
+            color: #806f50;
+            font-size: 13px;
+        }
+
+        .seller-heading {
+            margin: 30px 0 25px;
+        }
+
+        .seller-heading p {
+            margin: 0;
+            color: #b8860b;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .seller-heading h1 {
+            margin: 9px 0;
+            color: #3b301c;
+            font-size: 34px;
+        }
+
+        .seller-heading span {
+            color: #75694e;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        form label {
+            display: block;
+            margin: 16px 0 7px;
+            color: #4c4028;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        form input[type="email"],
+        form input[type="password"] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px 14px;
+            border: 1px solid #ddcc9b;
+            border-radius: 9px;
+            background: #fffdf8;
+            color: #3d321f;
+            outline: none;
+        }
+
+        form input:focus {
+            border-color: #c49a27;
+            box-shadow: 0 0 0 3px rgba(196, 154, 39, 0.12);
+        }
+
+        .seller-password {
+            display: flex;
+            gap: 8px;
+        }
+
+        .seller-password input {
+            flex: 1;
+        }
+
+        #sellerTogglePassword {
+            padding: 0 14px;
+            border: 1px solid #d4af37;
+            border-radius: 9px;
+            background: #fff8e5;
+            color: #9a7410;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .seller-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 18px 0;
+            font-size: 13px;
+        }
+
+        .seller-options label {
+            margin: 0;
+            font-weight: normal;
+            color: #75694e;
+        }
+
+        .seller-options a {
+            color: #a77a08;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .seller-login-button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #b8860b, #d4af37);
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.25);
+        }
+
+        .seller-login-button:hover {
+            background: #a77a08;
+            transform: translateY(-1px);
+        }
+
+        .seller-info {
+            margin-top: 22px;
+            padding: 13px;
+            border-radius: 10px;
+            background: #fffaf0;
+            border: 1px solid #eee0b8;
+            text-align: center;
+        }
+
+        .seller-info p {
+            margin: 0;
+            color: #806f50;
+            font-size: 13px;
+        }
+
+        .seller-demo {
+            margin-top: 22px;
+            text-align: center;
+            color: #806f50;
+            font-size: 13px;
+        }
+
+        .seller-demo a {
+            color: #a77a08;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        @media (max-width: 520px) {
+            .seller-login-card {
+                padding: 25px;
+            }
+
+            .seller-heading h1 {
+                font-size: 29px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +234,7 @@
         <section class="seller-login-card">
 
             <a href="index.html" class="back-link">
-                ← Back to role selection
+                &#8592; Back to role selection
             </a>
 
             <div class="seller-brand">
@@ -29,7 +247,6 @@
             </div>
 
             <div class="seller-heading">
-
                 <p>SELLER ACCOUNT</p>
 
                 <h1>Grow your store.</h1>
@@ -38,9 +255,7 @@
                     Sign in to manage your products,
                     orders and sales.
                 </span>
-
             </div>
-
 
             <form id="sellerLoginForm">
 
@@ -53,7 +268,6 @@
                     id="sellerEmail"
                     placeholder="Enter your seller email"
                 >
-
 
                 <label for="sellerPassword">
                     Password
@@ -76,7 +290,6 @@
 
                 </div>
 
-
                 <div class="seller-options">
 
                     <label>
@@ -90,20 +303,16 @@
 
                 </div>
 
-
                 <button
                     type="submit"
                     class="seller-login-button"
                 >
-                    Enter Seller Centre →
+                    Enter Seller Centre &#8594;
                 </button>
 
             </form>
 
-
             <div class="seller-info">
-
-                <span> </span>
 
                 <p>
                     Manage your marketplace store
@@ -112,19 +321,17 @@
 
             </div>
 
-
             <p class="seller-demo">
                 New seller?
-                <a href="seller-register.html">Create a seller account</a>
+                <a href="seller-register.html">
+                    Create a seller account
+                </a>
             </p>
 
         </section>
 
     </main>
 
-
-    <!-- ADDED by the Java conversion: api.js holds every call to the
-         servlets and must load before script.js, which uses it. -->
     <script src="api.js"></script>
     <script src="script.js"></script>
 
